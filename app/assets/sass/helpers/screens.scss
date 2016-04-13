@@ -1,0 +1,30 @@
+// screens
+// --------------------------------
+
+$max-xxs: $breakpoint-xs - 1;
+$min-xs: $breakpoint-xs;
+$max-xs: $breakpoint-sm - 1;
+$min-sm: $breakpoint-sm;
+$max-sm: $breakpoint-md - 1;
+$min-md: $breakpoint-md;
+$max-md: $breakpoint-lg - 1;
+$min-lg: $breakpoint-lg;
+
+$only-xxs: "only screen and (max-width: #{$max-xxs})";
+$only-xs: "only screen and (min-width: #{$min-xs}) and (max-width: #{$max-xs})";
+$only-sm: "only screen and (min-width: #{$min-sm}) and (max-width: #{$max-sm})";
+$only-md: "only screen and (min-width: #{$min-md}) and (max-width: #{$max-md})";
+$only-lg: "only screen and (min-width: #{$min-lg})";
+
+$below-xs: "only screen and (max-width: #{$max-xxs})";
+$below-sm: "only screen and (max-width: #{$max-xs})";
+$below-md: "only screen and (max-width: #{$max-sm})";
+$below-lg: "only screen and (max-width: #{$max-md})";
+
+$above-xxs: "only screen and (min-width: #{$min-xs})";
+$above-xs: "only screen and (min-width: #{$min-sm})";
+$above-sm: "only screen and (min-width: #{$min-md})";
+$above-md: "only screen and (min-width: #{$min-lg})";
+
+$ipad-portrait: "all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)";
+$ipad-landscape: "all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)";

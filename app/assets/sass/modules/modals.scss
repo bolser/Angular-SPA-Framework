@@ -1,0 +1,116 @@
+// modal structure
+// --------------------------------
+
+//modal structure: container
+[data-modal="container"] {
+  position: fixed;
+  z-index: 9999;
+  top:0; right:0;
+  bottom:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0, 0, 0, 0.8);
+  @media #{$only-xxs} { padding: $xxs-vert-spacing $xxs-horz-spacing; }
+  @media #{$only-xs} { padding: $xs-vert-spacing $xs-horz-spacing; }
+  @media #{$only-sm} { padding: $sm-vert-spacing $sm-horz-spacing; }
+  @media #{$only-md} { padding: $md-vert-spacing $md-horz-spacing; } 
+  @media #{$only-lg} { padding: $lg-vert-spacing $lg-horz-spacing; }
+}
+
+
+//modal structure: wrap
+[data-modal="body"] {
+  position: absolute;
+  top:50%; left:50%;
+  width:100%; max-width:$breakpoint-sm;
+  height:auto; max-height:100%;
+  padding: 2rem;
+  background: $c-bg;
+  overflow: auto;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  @media (min-height: 600px) { max-height: 600px; }
+}
+
+
+//modal structure: close
+[data-modal="close"] {
+  position: absolute;
+  display: block;
+  top:0; left:0;
+  bottom:0; right:0;
+  width:100%; height:100%;
+  cursor: default; }
+
+
+//modal structure: cross
+[data-modal="cross"] {
+  
+  position: absolute;
+  z-index: 9999;
+  display: block;
+  top:1rem; right:1rem;
+  width:2rem; height:2rem;
+    
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top:50%; left:0;
+    width:100%; height:1px;
+    background: #000000;
+    transform-origin: 50% 50%; }
+  
+  &::before { transform: rotate(45deg); }
+  &::after { transform: rotate(-45deg); }
+  
+}
+  
+  
+// modal animation
+// --------------------------------
+
+[data-modal="container"] {
+  
+  &.ng-enter,
+  &.ng-hide-remove {
+    
+    opacity: 0; 
+    transition: opacity 300ms; 
+    
+    [data-modal="body"] { 
+      opacity: 0; 
+      transition: opacity 300ms ease-out; }
+  }
+
+  &.ng-enter.ng-enter-active,
+  &.ng-hide-remove.ng-hide-remove-active { 
+    
+    opacity: 1; 
+    
+    [data-modal="body"] { opacity: 1;  }
+      
+  }
+  
+  &.ng-leave,
+  &.ng-hide-add {
+    
+    opacity: 1;
+    transition: opacity 300ms ease-out; 
+    
+    [data-modal="body"] { 
+      opacity: 1;
+      transition: opacity 300ms ease-out; }
+    
+  }
+  
+  &.ng-leave.ng-leave-active,
+  &.ng-hide-add.ng-hide-add-active { 
+    
+    opacity: 0; 
+    
+    [data-modal="body"] { opacity: 0; }
+    
+  }
+    
+}
