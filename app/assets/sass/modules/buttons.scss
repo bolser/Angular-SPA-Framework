@@ -11,11 +11,11 @@
   vertical-align: middle;
   appearance: none;
   user-select: none; }
-  
+
 [data-btn] {
-  
+
   position: relative;
-  display: inline-block;  
+  display: inline-block;
   color: $c-btn;
   line-height: ($btn-height - ($btn-border-width * 2));
   height: $btn-height;
@@ -25,21 +25,21 @@
   background: $c-btn-bg;
   border: $btn-border-width solid $c-btn-border;
   transition: opacity 300ms, color 300ms ease 150ms;
-  
-  &:hover { 
+
+  &:hover {
     color: $c-btn;
     text-decoration: none;
     transition: opacity 300ms, color 300ms; }
-    
+
   &[disabled] {
     color: $c-btn;
     text-shadow: none;
     cursor: not-allowed; }
-  
+
   &[disabled]:not(.loading) { opacity: 0.5; }
-  
+
 }
-  
+
 
 // tick buttons
 // --------------------------------
@@ -47,7 +47,7 @@
 [data-btn="tick"]:not([disabled]):not(.loading) {
 
   &:hover { color: transparent !important; }
-  
+
   &::before {
     position: absolute;
     display: block;
@@ -62,11 +62,11 @@
     transform-origin: 50% 50%;
     transform: rotate(45deg) translate(-10px, 10px);
     transition: opacity 300ms, transform 300ms; }
-  
+
   &:hover::before {
     opacity: 1;
     transform: rotate(45deg) translate(0px, 0px); }
-    
+
 }
 
 
@@ -91,11 +91,11 @@
     transform-origin: 50% 50%;
     transform: rotate(-45deg) translate(-10px, -10px);
     transition: opacity 300ms, transform 300ms; }
-      
+
   &:hover::before {
     opacity: 1;
     transform: rotate(-45deg) translate(0px, 0px); }
-    
+
 }
 
 
@@ -103,7 +103,7 @@
 // --------------------------------
 
 [data-btn].loading {
-  
+
   color: transparent;
   cursor: default;
   pointer-events: none;
@@ -115,12 +115,12 @@
     position: absolute;
     display: block;
     content: "";
-    top:0; left:0; 
+    top:0; left:0;
     bottom:0; right:0;
     background: $c-btn-loading;
     animation: btnLoading 1.5s linear 0s infinite; }
 
-  @at-root {  
+  @at-root {
     @keyframes btnLoading {
       0% { left:0%; right:100%; }
       50% { left:0%; right:0%; }

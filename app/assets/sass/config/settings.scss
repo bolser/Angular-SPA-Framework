@@ -6,17 +6,11 @@ $columns: 12;
 
 
 //dimensions: spacing
-$xxs-horz-spacing: 2rem;
-$xs-horz-spacing: 2rem;
-$sm-horz-spacing: 2rem;
-$md-horz-spacing: 2rem;
-$lg-horz-spacing: 2rem;
-
-$xxs-vert-spacing: 2rem;
-$xs-vert-spacing: 2rem;
-$sm-vert-spacing: 2rem;
-$md-vert-spacing: 2rem;
-$lg-vert-spacing: 2rem;
+$xxs-padding: 2rem;
+$xs-padding: 2rem;
+$sm-padding: 2rem;
+$md-padding: 2rem;
+$lg-padding: 2rem;
 
 
 //dimensions: breakpoints
@@ -30,7 +24,7 @@ $breakpoint-lg: 1200px;
 // --------------------------------
 
 //colours: brand
-$c-black: #111111; 
+$c-black: #111111;
 $c-white: #ffffff;
 
 
@@ -41,7 +35,7 @@ $c-bg: #ffffff;
 // typography
 // --------------------------------
 
-//typography: colours
+//typography: dimensions
 $font-size: 15px;
 $line-height: 1.33333333;
 
@@ -88,25 +82,3 @@ $c-valid: $c-black;
 $c-valid-bg: #9bd49b;
 $c-invalid: $c-black;
 $c-invalid-bg: #ed9696;
-
-
-// import
-// --------------------------------
-
-//import: helpers
-@import "../helpers/screens";
-
-
-//import: core
-@import "../core/base";
-@import "../core/grid";
-
-
-//import: modules
-@import "../modules/icons";
-@import "../modules/forms";
-@import "../modules/buttons";
-
-
-//import: styles
-@import "../styles/styles";
