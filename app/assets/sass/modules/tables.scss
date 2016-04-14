@@ -1,15 +1,15 @@
 // responsive tables
 // --------------------------------
 
-[data-table] { 
+[data-table] {
   display: table;
-  width: 100%; } 
+  width: 100%; }
 
-  
+
 //responsive tables: rows
 [data-group]:nth-child(odd) { background: darken($c-bg, 5); }
 [data-group]:nth-child(even) { background: $c-bg; }
-  
+
 [data-table="xs"] [data-group] { display: table-row; }
 [data-table="sm"] [data-group] { @media #{$above-xs} { display: table-row; } }
 [data-table="md"] [data-group] { @media #{$above-sm} { display: table-row; } }
@@ -23,12 +23,12 @@
 [data-table="lg"] [data-group="header"] { @media #{$below-lg} { display: none; } }
 
 [data-group="header"] {
-  
-  a, a:hover { 
-    position: relative; 
+
+  a, a:hover {
+    position: relative;
     color: #FFF;
     padding-right: 18px; }
-  
+
   a.ordered:after {
     position: absolute;
     content: "";
@@ -38,14 +38,14 @@
     border-width: 0 3px 6px;
     border-color: transparent transparent #CCC;
     transition: transform 200ms; }
-    
+
   a.ordered.reversed:after { transform: rotate(180deg); }
-  
+
 }
 
 
 //responsive tables: cells
-[data-cell] { 
+[data-cell] {
   position: relative;
   display: table-cell;
   padding: 5px;
@@ -54,8 +54,8 @@
 [data-table="sm"] [data-cell] { @media #{$below-sm} { display: block; padding-left: 30%; } }
 [data-table="md"] [data-cell] { @media #{$below-md} { display: block; padding-left: 30%; } }
 [data-table="lg"] [data-cell] { @media #{$below-lg} { display: block; padding-left: 30%; } }
-  
-[data-cell]:before { 
+
+[data-cell]:before {
   position: absolute;
   display: block;
   top:0; left:0; bottom:0;
@@ -65,7 +65,7 @@
   font-weight: bold;
   content: attr(am-cell);
   border-right: 1px solid darken($c-bg, 10); }
-  
+
 [data-table="sm"] [data-cell]:before { @media #{$above-xs} { display: none; } }
 [data-table="md"] [data-cell]:before { @media #{$above-sm} { display: none; } }
 [data-table="lg"] [data-cell]:before { @media #{$above-md} { display: none; } }
@@ -73,7 +73,7 @@
 
 //responsive tables: inputs
 [data-table] {
-  
+
   input[type="text"],
   input[type="email"],
   input[type="number"],
@@ -85,7 +85,7 @@
     line-height: 1.6em;
     padding: 0.2em 10px;
     background: darken($c-bg, 20); }
-    
+
 }
 
 
@@ -101,13 +101,13 @@
 // real tables
 // --------------------------------
 
-.table { 
+.table {
   width: 100%;
   max-width: 100%; }
 
 .table {
-  
-  th, td { 
+
+  th, td {
     padding: 5px;
     text-align: left;
     font-weight: normal;
@@ -118,10 +118,10 @@
     color: #FFF;
     vertical-align: bottom;
     background: darken($c-bg, 60); }
-  
+
   tr:nth-child(odd) td { background: darken($c-bg, 5); }
   tr:nth-child(even) td { background: $c-bg; }
-  
+
 }
 
 
@@ -133,7 +133,7 @@
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar; }
-  
+
   .table-sm th, .table-sm td { white-space: nowrap; }
 }
 
@@ -144,7 +144,7 @@
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar; }
-    
+
   .table-md th, .table-md td { white-space: nowrap; }
 }
 

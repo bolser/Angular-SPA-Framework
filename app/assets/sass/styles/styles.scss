@@ -4,65 +4,65 @@
 //typography: general
 * {
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-  
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   color: $c-font;
-  font: normal #{$font-size}/#{$line-height} Arial, sans-serif; }
+  font: normal #{$font-size}/#{$line-height} Arial, sans-serif;
+}
 
- 
+
 //typography: headers
 h1 {
   font-size: 3rem;
   line-height: 1;
-  margin-bottom: 2rem; }
+  margin-bottom: 2rem;
+}
 
 h2 {
   font-size: 2rem;
   line-height: 1;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
 h3 {
   font-size: 1rem;
   line-height: $line-height;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+}
 
 
 //typography: links
-a { 
-  
+a {
   color: $c-link;
   transition: color 300ms;
-  
-  &:hover { color: $c-link-hover; }
-  
+
+  &:hover {
+    color: $c-link-hover;
+  }
 }
 
 
 //typography: padding
-p, ul, ol { padding-bottom: 1rem; }
+p,
+ul,
+ol {
+  padding-bottom: 1rem;
+}
 
 p:last-child,
 ul:last-child,
-ol:last-child { padding-bottom: 0; }
-  
+ol:last-child {
+  padding-bottom: 0;
+}
+
 
 // page
 // --------------------------------
-  
+
 //page: body
-body { 
+body {
   position: relative;
-  background: $c-bg; }
-
-
-//page: animation
-[ng-view]{
-  
-  &.ng-enter { 
-    opacity: 0;
-    transition: opacity 600ms; }
-
-  &.ng-enter.ng-enter-active { opacity: 1; }
-  
+  background: $c-bg;
 }

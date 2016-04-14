@@ -12,7 +12,7 @@
   @media #{$only-xxs} { padding: $xxs-vert-spacing $xxs-horz-spacing; }
   @media #{$only-xs} { padding: $xs-vert-spacing $xs-horz-spacing; }
   @media #{$only-sm} { padding: $sm-vert-spacing $sm-horz-spacing; }
-  @media #{$only-md} { padding: $md-vert-spacing $md-horz-spacing; } 
+  @media #{$only-md} { padding: $md-vert-spacing $md-horz-spacing; }
   @media #{$only-lg} { padding: $lg-vert-spacing $lg-horz-spacing; }
 }
 
@@ -44,13 +44,13 @@
 
 //modal structure: cross
 [data-modal="cross"] {
-  
+
   position: absolute;
   z-index: 9999;
   display: block;
   top:1rem; right:1rem;
   width:2rem; height:2rem;
-    
+
   &::before,
   &::after {
     position: absolute;
@@ -60,57 +60,57 @@
     width:100%; height:1px;
     background: #000000;
     transform-origin: 50% 50%; }
-  
+
   &::before { transform: rotate(45deg); }
   &::after { transform: rotate(-45deg); }
-  
+
 }
-  
-  
+
+
 // modal animation
 // --------------------------------
 
 [data-modal="container"] {
-  
+
   &.ng-enter,
   &.ng-hide-remove {
-    
-    opacity: 0; 
-    transition: opacity 300ms; 
-    
-    [data-modal="body"] { 
-      opacity: 0; 
+
+    opacity: 0;
+    transition: opacity 300ms;
+
+    [data-modal="body"] {
+      opacity: 0;
       transition: opacity 300ms ease-out; }
   }
 
   &.ng-enter.ng-enter-active,
-  &.ng-hide-remove.ng-hide-remove-active { 
-    
-    opacity: 1; 
-    
+  &.ng-hide-remove.ng-hide-remove-active {
+
+    opacity: 1;
+
     [data-modal="body"] { opacity: 1;  }
-      
+
   }
-  
+
   &.ng-leave,
   &.ng-hide-add {
-    
+
     opacity: 1;
-    transition: opacity 300ms ease-out; 
-    
-    [data-modal="body"] { 
+    transition: opacity 300ms ease-out;
+
+    [data-modal="body"] {
       opacity: 1;
       transition: opacity 300ms ease-out; }
-    
+
   }
-  
+
   &.ng-leave.ng-leave-active,
-  &.ng-hide-add.ng-hide-add-active { 
-    
-    opacity: 0; 
-    
+  &.ng-hide-add.ng-hide-add-active {
+
+    opacity: 0;
+
     [data-modal="body"] { opacity: 0; }
-    
+
   }
-    
+
 }
