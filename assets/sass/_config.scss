@@ -50,9 +50,9 @@ $c-btn-loading: lighten($c-black, 50);
 // forms
 // --------------------------------
 
-$form-border-width: 1px;
+$form-height: 32px;
 $form-spacing: 1rem;
-$form-height: ($font-size * 3);
+$form-border-width: 1px;
 
 $c-form: $c-font;
 $c-form-bg: darken($c-bg, 5);
