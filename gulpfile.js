@@ -1,32 +1,31 @@
 'use strict';
 
 
-// paths
+// config
 // --------------------------------
 
-var paths = {
+var config = {
   css: {
-    entry: './app/assets/sass/config/config.scss',
+    entry: './assets/sass/all.scss',
     dest: './dist/css',
-    dir: './app/assets/sass'
-    
+    dir: './assets/sass'
   },
   js: {
-    entry: './app/config.js',
+    entry: './app/all.js',
     dest: './dist/js',
     dir: './app'
   },
   jsLibs: {
-    dest: './dist/js',
-    files: [
+    entry: [
       './node_modules/angular/angular.js',
       './node_modules/angular-route/angular-route.js',
       './node_modules/angular-animate/angular-animate.js'
-    ]
+    ],
+    dest: './dist/js'
   },
   img: {
     dest: './dist/img',
-    dir: './app/assets/img'
+    dir: './assets/img'
   }
 };
 
@@ -40,22 +39,21 @@ var autoprefixer = require('gulp-autoprefixer'),
     del = require('del'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
-    livereload = require('gulp-livereload'),
     pngquant = require('imagemin-pngquant'),
     sass = require('gulp-sass'),
     uglify = require('gulp-uglify'),
     webpack = require('gulp-webpack');
 
 
-// clean files
+// clean
 // --------------------------------
 
-gulp.task('clean-files', function() {
+gulp.task('clean', function() {
   return del([
-    paths.css.dest, 
-    paths.js.dest,
-    paths.jsLibs.dest,
-    paths.img.dest
+    config.css.dest,
+    config.js.dest,
+    config.jsLibs.dest,
+    config.img.dest
   ]);
 });
 
@@ -64,13 +62,12 @@ gulp.task('clean-files', function() {
 // --------------------------------
 
 gulp.task('build-css', function() {
-  return gulp.src(paths.css.entry)
+  return gulp.src(config.css.entry)
     .pipe(concat('app.min.css'))
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(gulp.dest(paths.css.dest))
-    .pipe(livereload());
+    .pipe(gulp.dest(config.css.dest));
 });
 
 
@@ -78,15 +75,14 @@ gulp.task('build-css', function() {
 // --------------------------------
 
 gulp.task('build-js', function() {
-  return gulp.src(paths.js.entry)
-		.pipe(webpack({
-  		output: {
-    		filename: 'app.min.js'
-  		}
-		}))
-		.pipe(uglify())
-		.pipe(gulp.dest(paths.js.dest))
-    .pipe(livereload());
+  return gulp.src(config.js.entry)
+    .pipe(webpack({
+      output: {
+        filename: 'app.min.js'
+      }
+    }))
+    .pipe(uglify())
+    .pipe(gulp.dest(config.js.dest));
 });
 
 
@@ -94,11 +90,10 @@ gulp.task('build-js', function() {
 // --------------------------------
 
 gulp.task('build-js-libs', function() {
-  return gulp.src(paths.jsLibs.files)
+  return gulp.src(config.jsLibs.entry)
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest(paths.jsLibs.dest))
-    .pipe(livereload());
+    .pipe(gulp.dest(config.jsLibs.dest));
 });
 
 
@@ -106,13 +101,13 @@ gulp.task('build-js-libs', function() {
 // --------------------------------
 
 gulp.task('compress-imgs', function() {
-  return gulp.src(paths.img.dir + '/**')
+  return gulp.src(config.img.dir + '/**')
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
       use: [pngquant()]
     }))
-    .pipe(gulp.dest(paths.img.dest));
+    .pipe(gulp.dest(config.img.dest));
 });
 
 
@@ -120,14 +115,14 @@ gulp.task('compress-imgs', function() {
 // --------------------------------
 
 gulp.task('watch-files', function() {
-  
+
   //watch css changes
-  gulp.watch(paths.css.dir  + '/**', function() {
+  gulp.watch(config.css.dir  + '/**', function() {
     gulp.start('build-css');
   });
-  
+
   //watch js changes
-  gulp.watch(paths.js.dir  + '/**', function() {
+  gulp.watch(config.js.dir  + '/**', function() {
     gulp.start('build-js');
   });
 
@@ -136,8 +131,8 @@ gulp.task('watch-files', function() {
 
 // default task
 // --------------------------------
-    
-gulp.task('default', ['clean-files'], function() {
+
+gulp.task('default', ['clean'], function() {
   gulp.start('build-css');
   gulp.start('build-js');
   gulp.start('build-js-libs');

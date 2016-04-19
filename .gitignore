@@ -7,9 +7,8 @@
 *.exe
 *.o
 *.so
-dist/
 
- 
+
 # packages
 # --------------------------------
 
@@ -21,16 +20,16 @@ dist/
 *.rar
 *.tar
 *.zip
- 
- 
+
+
 # logs & databases
 # --------------------------------
 
 *.log
 *.sql
 *.sqlite
- 
- 
+
+
 # os generated files
 # --------------------------------
 
@@ -54,3 +53,9 @@ Thumbs.db
 
 npm-debug.log
 node_modules/
+
+
+# compiled files
+# --------------------------------
+
+dist/
