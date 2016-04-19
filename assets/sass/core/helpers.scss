@@ -1,0 +1,38 @@
+// helper classes
+// --------------------------------
+
+.clear {
+  &::after {
+    clear: both;
+  }
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignRight {
+  text-align: right;
+}

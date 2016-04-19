@@ -1,7 +1,7 @@
-// buttons
+// buttons base
 // --------------------------------
 
-[data-btn], .btn {
+.btn {
   font-size: 1rem;
   cursor: pointer;
   overflow: hidden;
@@ -13,7 +13,7 @@
   user-select: none; }
 
 [data-btn] {
-
+  @extend .btn;
   position: relative;
   display: inline-block;
   color: $c-btn;
@@ -24,20 +24,22 @@
   opacity: 1;
   background: $c-btn-bg;
   border: $btn-border-width solid $c-btn-border;
-  transition: opacity 300ms, color 300ms ease 150ms;
 
   &:hover {
     color: $c-btn;
     text-decoration: none;
-    transition: opacity 300ms, color 300ms; }
+    transition: opacity 300ms, color 300ms;
+  }
 
   &[disabled] {
     color: $c-btn;
     text-shadow: none;
-    cursor: not-allowed; }
+    cursor: not-allowed;
 
-  &[disabled]:not(.loading) { opacity: 0.5; }
-
+    &:not(.loading) {
+      opacity: 0.5;
+    }
+  }
 }
 
 
@@ -45,28 +47,35 @@
 // --------------------------------
 
 [data-btn="tick"]:not([disabled]):not(.loading) {
+  transition: opacity 300ms, color 300ms ease 150ms;
 
-  &:hover { color: transparent !important; }
+  &:hover {
+    color: transparent !important;
+  }
 
   &::before {
     position: absolute;
     display: block;
     content: "";
-    top:50%; margin-top:-0.7em;
-    left:50%; margin-left:-0.3em;
-    width:0.6em; height:1.2em;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.7em;
+    margin-left: -0.3em;
+    width: 0.6em;
+    height: 1.2em;
     opacity: 0;
     border-right: 0.2em solid $c-btn;
     border-bottom: 0.2em solid $c-btn;
     box-sizing: border-box;
     transform-origin: 50% 50%;
     transform: rotate(45deg) translate(-10px, 10px);
-    transition: opacity 300ms, transform 300ms; }
+    transition: opacity 300ms, transform 300ms;
+  }
 
   &:hover::before {
     opacity: 1;
-    transform: rotate(45deg) translate(0px, 0px); }
-
+    transform: rotate(45deg) translate(0px, 0px);
+  }
 }
 
 
@@ -74,28 +83,35 @@
 // --------------------------------
 
 [data-btn="arrow"]:not([disabled]):not(.loading) {
+  transition: opacity 300ms, color 300ms ease 150ms;
 
-  &:hover { color: transparent !important; }
+  &:hover {
+    color: transparent !important;
+  }
 
   &::before {
     position: absolute;
     display: block;
     content: "";
-    top:50%; margin-top:-0.4em;
-    left:50%; margin-left:-0.4em;
-    width:0.8em; height:0.8em;
+    top: 50%;
+    left: 50%;
+    margin-top: -0.4em;
+    margin-left: -0.4em;
+    width: 0.8em;
+    height: 0.8em;
     opacity: 0;
     border-right: 0.2em solid $c-btn;
     border-bottom: 0.2em solid $c-btn;
     box-sizing: border-box;
     transform-origin: 50% 50%;
     transform: rotate(-45deg) translate(-10px, -10px);
-    transition: opacity 300ms, transform 300ms; }
+    transition: opacity 300ms, transform 300ms;
+  }
 
   &:hover::before {
     opacity: 1;
-    transform: rotate(-45deg) translate(0px, 0px); }
-
+    transform: rotate(-45deg) translate(0px, 0px);
+  }
 }
 
 
@@ -103,7 +119,6 @@
 // --------------------------------
 
 [data-btn].loading {
-
   color: transparent;
   cursor: default;
   pointer-events: none;
@@ -115,17 +130,28 @@
     position: absolute;
     display: block;
     content: "";
-    top:0; left:0;
-    bottom:0; right:0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background: $c-btn-loading;
-    animation: btnLoading 1.5s linear 0s infinite; }
+    animation: btnLoading 1.5s linear 0s infinite;
+  }
 
   @at-root {
     @keyframes btnLoading {
-      0% { left:0%; right:100%; }
-      50% { left:0%; right:0%; }
-      100% { left:100%; right:0%; }
+      0% {
+        left: 0%;
+        right: 100%;
+      }
+      50% {
+        left: 0%;
+        right: 0%;
+      }
+      100% {
+        left: 100%;
+        right: 0%;
+      }
     }
   }
-
 }
