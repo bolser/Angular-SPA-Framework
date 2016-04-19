@@ -81,10 +81,11 @@ template {
 
 [ng-cloak] {
   display: none !important;
-}
-
-[ng-cloak] * {
-  transition: none !important;
+  
+  &,
+  * {
+    transition: none !important;
+  }
 }
 
 @at-root {
@@ -116,9 +117,7 @@ template {
   outline: 0;
   outline-style: none;
   text-decoration: none;
-}
 
-* {
   &,
   &::before
   &::after {
@@ -171,6 +170,7 @@ nav,
 footer {
   ul {
     padding: 0;
+    margin: 0;
     list-style: none;
   }
 }
@@ -183,14 +183,6 @@ hr {
   display: block;
   height: 0;
   border-top: 1px solid #CCC;
-}
-
-ol ol,
-ul ul,
-ol ul,
-ul ol {
-  padding-bottom: 0;
-  margin-bottom: 0;
 }
 
 
