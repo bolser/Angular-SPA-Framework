@@ -1,7 +1,6 @@
-// typography
+// general
 // --------------------------------
 
-//typography: general
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,7 +12,9 @@ html {
 }
 
 
-//typography: headers
+// headers
+// --------------------------------
+
 h1 {
   font-size: 3rem;
   line-height: 1;
@@ -33,7 +34,9 @@ h3 {
 }
 
 
-//typography: links
+// links
+// --------------------------------
+
 a {
   color: $c-link;
   transition: color 300ms;
@@ -44,25 +47,15 @@ a {
 }
 
 
-//typography: padding
+// padding
+// --------------------------------
+
 p,
 ul,
 ol {
   padding-bottom: 1rem;
-}
 
-p:last-child,
-ul:last-child,
-ol:last-child {
-  padding-bottom: 0;
-}
-
-
-// page
-// --------------------------------
-
-//page: body
-body {
-  position: relative;
-  background: $c-bg;
+  &:last-child {
+    padding-bottom: 0;
+  }
 }
