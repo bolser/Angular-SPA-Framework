@@ -1,15 +1,22 @@
 // import
 // --------------------------------
 
+//import: config
 @import "./config";
 
+
+//import: core
 @import "../core/screens";
 @import "../core/base";
 @import "../core/grid";
 @import "../core/helpers";
 
+
+//import: modules
 @import "../modules/forms";
 @import "../modules/buttons";
 
+
+//import: general
 @import "../general/typography";
 @import "../general/page";

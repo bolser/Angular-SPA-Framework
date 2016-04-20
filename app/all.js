@@ -1,25 +1,15 @@
-// config
-// --------------------------------
-
-var conf = {
-  version: '0.0.0',
-  name: 'MEAN Framework',
-  url: 'http://localhost:8080'
-};
-
-
 // include files
 // --------------------------------
 
-//modules
-require('../modules/modules.js');
+//config
+require('../config.js');
 
 //services
 require('../services/example.service.js');
 
 //run
 require('../run/view.run.js');
-require('../run/google-analytics.run.js');
+require('../run/analytics.run.js');
 
 //routes
 require('../routes/routes.js');

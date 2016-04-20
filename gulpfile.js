@@ -65,7 +65,9 @@ gulp.task('build-css', function() {
   return gulp.src(config.css.entry)
     .pipe(concat('app.min.css'))
     .pipe(sass())
-    .pipe(autoprefixer())
+    .pipe(autoprefixer({
+      browsers: ['> 0.5%']
+    }))
     .pipe(cleanCSS())
     .pipe(gulp.dest(config.css.dest));
 });

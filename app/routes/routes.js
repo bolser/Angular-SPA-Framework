@@ -1,25 +1,29 @@
 'use strict';
-  
-  
+
+
 // init
 // --------------------------------
 
-angular.module('app').config(routes);
+angular
+  .module('app')
+  .config(routes);
 
 routes.$inject = ['$routeProvider', '$locationProvider'];
-  
-  
+
+
 // functionality
 // --------------------------------
 
 function routes($routeProvider, $locationProvider) {
-  
-  //html5 mode & hash prefix  
+
+
+  //html5 mode & hash prefix
   $locationProvider.html5Mode(true).hashPrefix('!');
 
-  //routes  
+
+  //routes
   $routeProvider
-  
+
     //home
     .when('/', {
       templateUrl: '/views/home.html',
@@ -27,14 +31,15 @@ function routes($routeProvider, $locationProvider) {
       controllerAs: 'home',
       title: 'Home'
     })
-    
-    //404    
+
+    //404
     .when('/404', {
       templateUrl: '/views/404.html',
       title: 'Page Not Found'
-    })  
-    
+    })
+
     //catch all
     .otherwise({ redirectTo: '/404' });
-    
+
+
 };

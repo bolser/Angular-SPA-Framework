@@ -4,7 +4,9 @@
 // init
 // --------------------------------
 
-angular.module('app').factory('exampleService', exampleService);
+angular
+  .module('app')
+  .factory('exampleService', exampleService);
 
 exampleService.$inject = [];
 
@@ -13,17 +15,20 @@ exampleService.$inject = [];
 // --------------------------------
 
 function exampleService() {
-  
+
+
   //callable members
   var service = {
     exampleFunctionality: exampleFunctionality
   };
 
   return service;
-  
-  //service function    
+
+
+  //service function
   function exampleFunctionality() {
     return false;
   };
-      
+
+
 };

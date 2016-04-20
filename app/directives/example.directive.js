@@ -1,10 +1,12 @@
 'use strict';
 
 
-// init 
+// init
 // --------------------------------
 
-angular.module('app').directive('exampleDirective', exampleDirective);
+angular
+  .module('app')
+  .directive('exampleDirective', exampleDirective);
 
 exampleDirective.$inject = [];
 
@@ -13,7 +15,8 @@ exampleDirective.$inject = [];
 // --------------------------------
 
 function exampleDirective() {
-  
+
+
   //define directive
   var directive = {
     replace: true,
@@ -24,10 +27,14 @@ function exampleDirective() {
     link: link,
     templateUrl: '/directives/example.html?version=' + conf.version,
   };
-  
+
   return directive;
-  
+
+
   //link
-  function link(scope, elem, attrs) { };
-  
+  function link(scope, elem, attrs) {
+
+  };
+
+
 };
