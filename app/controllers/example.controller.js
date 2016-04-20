@@ -1,10 +1,12 @@
 'use strict';
-  
-  
+
+
 // init
 // --------------------------------
 
-angular.module('app').controller('ExampleController', ExampleController);
+angular
+  .module('app')
+  .controller('ExampleController', ExampleController);
 
 ExampleController.$inject = [];
 
@@ -12,9 +14,11 @@ ExampleController.$inject = [];
 // functionality
 // --------------------------------
 
-function ExampleController() { 
-  
+function ExampleController() {
+
+
   //bindable members
   var vm = this;
-      
+
+
 };

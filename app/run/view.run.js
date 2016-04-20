@@ -1,10 +1,12 @@
 'use strict';
-  
-  
+
+
 // init
 // --------------------------------
 
-angular.module('app').run(view);
+angular
+  .module('app')
+  .run(view);
 
 view.$inject = ['$rootScope', '$window', '$location'];
 
@@ -13,20 +15,22 @@ view.$inject = ['$rootScope', '$window', '$location'];
 // --------------------------------
 
 function view($rootScope, $window, $location) {
-  
-  //route change success    
+
+
+  //route change success
   $rootScope.$on('$routeChangeSuccess', routeChangeSuccess);
-  
+
+
   //update global view object
   function routeChangeSuccess(event, current) {
-  
+
     //route doesn't exists
     if (!current.$$route) return;
-    
+
     //route vars
     var route = current.$$route,
         baseUrl = conf.url.replace(/\/$/, '');
-    
+
     //reposition view to top
     $window.scrollTo(0, 0);
 
@@ -42,7 +46,8 @@ function view($rootScope, $window, $location) {
         image: baseUrl + '/framework/img/brand/social.jpg'
       }
     };
-    
+
   };
+
 
 };

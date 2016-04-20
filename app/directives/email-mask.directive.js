@@ -1,10 +1,12 @@
 'use strict';
-  
-  
-// init 
+
+
+// init
 // --------------------------------
 
-angular.module('app').directive('emailMask', emailMask);
+angular
+  .module('app')
+  .directive('emailMask', emailMask);
 
 emailMask.$inject = [];
 
@@ -13,7 +15,8 @@ emailMask.$inject = [];
 // --------------------------------
 
 function emailMask() {
-  
+
+
   //define directive
   var directive = {
     replace: true,
@@ -24,7 +27,8 @@ function emailMask() {
     },
     template: '<a href="mailto:{{user}}@{{host}}">{{user}}@{{host}}</a>'
   };
-  
+
   return directive;
+
 
 };
