@@ -1,28 +1,17 @@
-// init grid
+// initialise
 // --------------------------------
 
-$colWidth: (100% / $columns);
+$col-width: (100% / $columns);
 
-[data-container],
-[data-row] {
-  &::before,
-  &::after {
-    content: " ";
-    display: table;
-  }
-
-  &::after {
-    clear: both;
-  }
+[data-container]::after,
+[data-row]::after {
+  display: table;
+  content: "";
+  clear: both;
 }
 
 [data-container] {
   margin: 0 auto;
-}
-
-[data-container="fluid"] {
-  width: 100% !important;
-  max-width: 1600px !important;
 }
 
 [data-col] {
@@ -32,313 +21,55 @@ $colWidth: (100% / $columns);
 }
 
 
-// spacing
+// grid
 // --------------------------------
 
-//spacing: xxs
-@media #{$only-xxs} {
-  [data-container] {
-    padding-left: $xxs-padding;
-    padding-right: $xxs-padding;
-  }
-
-  [data-row] {
-    margin-left: (-$xxs-padding);
-    margin-right: (-$xxs-padding);
-  }
-
-  [data-col] {
-    padding-left: $xxs-padding;
-    padding-right: $xxs-padding;
-  }
-}
-
-
-//spacing: xs
-@media #{$only-xs} {
-  [data-container] {
-    padding-left: $xs-padding;
-    padding-right: $xs-padding;
-  }
-
-  [data-row] {
-    margin-left: (-$xs-padding);
-    margin-right: (-$xs-padding);
-  }
-
-  [data-col] {
-    padding-left: $xs-padding;
-    padding-right: $xs-padding;
-  }
-}
-
-
-//spacing: sm
-@media #{$only-sm} {
-  [data-container] {
-    padding-left: $sm-padding;
-    padding-right: $sm-padding;
-  }
-
-  [data-row] {
-    margin-left: (-$sm-padding);
-    margin-right: (-$sm-padding);
-  }
-
-  [data-col] {
-    padding-left: $sm-padding;
-    padding-right: $sm-padding;
-  }
-}
-
-
-//spacing: md
-@media #{$only-md} {
-  [data-container] {
-    padding-left: $md-padding;
-    padding-right: $md-padding;
-  }
-
-  [data-row] {
-    margin-left: (-$md-padding);
-    margin-right: (-$md-padding);
-  }
-
-  [data-col] {
-    padding-left: $md-padding;
-    padding-right: $md-padding;
-  }
-}
-
-
-//spacing: lg
-@media #{$only-lg} {
-  [data-container] {
-    padding-left: $lg-padding;
-    padding-right: $lg-padding;
-  }
-
-  [data-row] {
-    margin-left: (-$lg-padding);
-    margin-right: (-$lg-padding);
-  }
-
-  [data-col] {
-    padding-left: $lg-padding;
-    padding-right: $lg-padding;
-  }
-}
-
-
-// layout
-// --------------------------------
-
-//layout: xxs
-[data-container] {
-  width: $max-xxs;
-}
-
-[data-col*="xxs-"] {
-  float: left;
-}
-
-@for $i from 0 through $columns {
-  [data-col~="xxs-#{$i}"] {
-    width: ($colWidth * $i);
-  }
-
-  [data-push~="xxs-#{$i}"] {
-    left: ($colWidth * $i);
-  }
-
-  [data-pull~="xxs-#{$i}"] {
-    right: ($colWidth * $i);
-  }
-
-  [data-offset~="xxs-#{$i}"] {
-    margin-left: ($colWidth * $i);
-  }
-}
-
-
-//layout: xs
-@media #{$above-xxs} {
-  [data-container] {
-    width: $max-xs;
-  }
-
-  [data-col*="xs-"] {
-    float: left;
-  }
-
-  @for $i from 0 through $columns {
-    [data-col~="xs-#{$i}"] {
-      width: ($colWidth * $i);
+@each $breakpoint-key, $breakpoint-value in $breakpoints {  
+  @media only screen and (min-width: $breakpoint-value) {
+    [data-container] {
+      max-width: $breakpoint-value;
+      padding: 0 map-get($column-spacing, $breakpoint-key);
+      
+      @if ($breakpoint-key == xs) or ($breakpoint-key == sm) {
+        max-width: 100%;
+      }
     }
-
-    [data-push~="xs-#{$i}"] {
-      left: ($colWidth * $i);
+    
+    [data-row] {
+      margin: 0 -#{map-get($column-spacing, $breakpoint-key)};
     }
-
-    [data-pull~="xs-#{$i}"] {
-      right: ($colWidth * $i);
+    
+    [data-col] {
+      padding: 0 map-get($column-spacing, $breakpoint-key);
     }
-
-    [data-offset~="xs-#{$i}"] {
-      margin-left: ($colWidth * $i);
+    
+    [data-col*="#{$breakpoint-key}-"] {
+      float: left;
+    }
+    
+    @for $i from 0 through $columns {
+      [data-col~="#{$breakpoint-key}-#{$i}"] {
+        width: ($col-width * $i);
+      }
+    
+      [data-push~="#{$breakpoint-key}-#{$i}"] {
+        left: ($col-width * $i);
+      }
+    
+      [data-pull~="#{$breakpoint-key}-#{$i}"] {
+        right: ($col-width * $i);
+      }
+    
+      [data-offset~="#{$breakpoint-key}-#{$i}"] {
+        margin-left: ($col-width * $i);
+      }
     }
   }
-}
-
-
-//layout: sm
-@media #{$above-xs} {
-  [data-container] {
-    width: $min-sm;
-  }
-
-  [data-col*="sm-"] {
-    float: left;
-  }
-
-  @for $i from 0 through $columns {
-    [data-col~="sm-#{$i}"] {
-      width: ($colWidth * $i);
+  
+  @media #{map-get($only, $breakpoint-key)} {
+    [data-hidden~="#{$breakpoint-key}"],
+    [data-visible]:not([data-visible~="#{$breakpoint-key}"]) {
+      display: none !important;
     }
-
-    [data-push~="sm-#{$i}"] {
-      left: ($colWidth * $i);
-    }
-
-    [data-pull~="sm-#{$i}"] {
-      right: ($colWidth * $i);
-    }
-
-    [data-offset~="sm-#{$i}"] {
-      margin-left: ($colWidth * $i);
-    }
-  }
-}
-
-
-//layout: md
-@media #{$above-sm} {
-  [data-container] {
-    max-width: $min-md;
-  }
-
-  [data-col*="md-"] {
-    float: left;
-  }
-
-  @for $i from 0 through $columns {
-    [data-col~="md-#{$i}"] {
-      width: ($colWidth * $i);
-    }
-
-    [data-push~="md-#{$i}"] {
-      left: ($colWidth * $i);
-    }
-
-    [data-pull~="md-#{$i}"] {
-      right: ($colWidth * $i);
-    }
-
-    [data-offset~="md-#{$i}"] {
-      margin-left: ($colWidth * $i);
-    }
-  }
-}
-
-
-//layout: lg
-@media #{$above-md} {
-  [data-container] {
-    max-width: $min-lg;
-  }
-
-  [data-col*="lg-"] {
-    float: left;
-  }
-
-  @for $i from 0 through $columns {
-    [data-col~="lg-#{$i}"] {
-      width: ($colWidth * $i);
-    }
-
-    [data-push~="lg-#{$i}"] {
-      left: ($colWidth * $i);
-    }
-
-    [data-pull~="lg-#{$i}"] {
-      right: ($colWidth * $i);
-    }
-
-    [data-offset~="lg-#{$i}"] {
-      margin-left: ($colWidth * $i);
-    }
-  }
-}
-
-
-// visible/hidden
-// --------------------------------
-
-//visible/hidden: xxs
-@media #{$only-xxs} {
-  [data-hidden~="xxs"],
-  [data-visible~="xs"]:not([data-visible~="xxs"]),
-  [data-visible~="sm"]:not([data-visible~="xxs"]),
-  [data-visible~="md"]:not([data-visible~="xxs"]),
-  [data-visible~="lg"]:not([data-visible~="xxs"]) {
-    display: none !important;
-  }
-}
-
-
-//visible/hidden: xs
-@media #{$only-xs} {
-  [data-hidden~="xs"],
-  [data-visible~="xxs"]:not([data-visible~="xs"]),
-  [data-visible~="sm"]:not([data-visible~="xs"]),
-  [data-visible~="md"]:not([data-visible~="xs"]),
-  [data-visible~="lg"]:not([data-visible~="xs"]) {
-    display: none !important;
-  }
-}
-
-
-//visible/hidden: sm
-@media #{$only-sm} {
-  [data-hidden~="sm"],
-  [data-visible~="xxs"]:not([data-visible~="sm"]),
-  [data-visible~="xs"]:not([data-visible~="sm"]),
-  [data-visible~="md"]:not([data-visible~="sm"]),
-  [data-visible~="lg"]:not([data-visible~="sm"]) {
-    display: none !important;
-  }
-}
-
-
-//visible/hidden: md
-@media #{$only-md} {
-  [data-hidden~="md"],
-  [data-visible~="xxs"]:not([data-visible~="md"]),
-  [data-visible~="xs"]:not([data-visible~="md"]),
-  [data-visible~="sm"]:not([data-visible~="md"]),
-  [data-visible~="lg"]:not([data-visible~="md"]) {
-    display: none !important;
-  }
-}
-
-
-//visible/hidden: lg
-@media #{$only-lg} {
-  [data-hidden~="lg"],
-  [data-visible~="xxs"]:not([data-visible~="lg"]),
-  [data-visible~="xs"]:not([data-visible~="lg"]),
-  [data-visible~="sm"]:not([data-visible~="lg"]),
-  [data-visible~="md"]:not([data-visible~="lg"]) {
-    display: none !important;
-  }
+  }  
 }

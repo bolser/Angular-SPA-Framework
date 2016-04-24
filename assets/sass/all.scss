@@ -2,21 +2,22 @@
 // --------------------------------
 
 //import: config
-@import "./config";
+@import "config";
 
 
 //import: core
-@import "../core/normalize";
-@import "../core/screens";
-@import "../core/grid";
-@import "../core/helpers";
+//@import "core/normalize";
+@import "core/screens";
+@import "core/grid";
+//@import "core/helpers";
 
-
+/*
 //import: modules
-@import "../modules/forms";
-@import "../modules/buttons";
+@import "modules/forms";
+@import "modules/buttons";
 
 
 //import: general
-@import "../general/typography";
-@import "../general/page";
+@import "general/typography";
+@import "general/page";
+*/
