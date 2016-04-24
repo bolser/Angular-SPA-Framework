@@ -64,7 +64,7 @@ gulp.task('clean', function() {
 gulp.task('build-css', function() {
   return gulp.src(config.css.entry)
     .pipe(concat('app.min.css'))
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['> 0.5%']
     }))
