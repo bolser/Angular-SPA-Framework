@@ -10,7 +10,7 @@ $min-xl: map-get($breakpoints, xl);
 $max-xs: ($min-sm - 1px);
 $max-sm: ($min-md - 1px);
 $max-md: ($min-lg - 1px);
-$max-lg: ($min-xs - 1px);
+$max-lg: ($min-xl - 1px);
 
 
 // individual breakpoints

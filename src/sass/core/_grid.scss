@@ -36,7 +36,7 @@ $col-width: (100% / $columns);
     }
     
     [data-row] {
-      margin: 0 -#{map-get($column-spacing, $breakpoint-key)};
+      margin: 0 (-#{map-get($column-spacing, $breakpoint-key)});
     }
     
     [data-col] {

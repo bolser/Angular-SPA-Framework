@@ -1,0 +1,40 @@
+// dimensions
+// --------------------------------
+
+$columns: 12;
+
+$breakpoints: (
+  "xs": 0px,
+  "sm": 420px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px
+);
+
+$column-spacing: (
+  "xs": 1rem,
+  "sm": 1rem,
+  "md": 2rem,
+  "lg": 2rem,
+  "xl": 2rem
+);
+
+
+// color
+// --------------------------------
+
+$color: (
+  "black": #111111,
+  "white": #ffffff,
+  "bg": #ffffff,
+  "font": #111111,
+  "link": #2F6893,
+  "link-hover": lighten(#2F6893, 20)
+);
+
+
+// typography
+// --------------------------------
+
+$font-size: 16px;
+$line-height: 1.5;

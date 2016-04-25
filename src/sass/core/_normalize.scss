@@ -79,7 +79,7 @@ template {
   text-decoration: none;
 
   &,
-  &::before
+  &::before,
   &::after {
     box-sizing: border-box;
   }

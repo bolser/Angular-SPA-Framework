@@ -7,7 +7,7 @@
 }
 
 html {
-  color: $c-font;
+  color: map-get($color, font);
   font: normal #{$font-size}/#{$line-height} Arial, sans-serif;
 }
 
@@ -38,11 +38,11 @@ h3 {
 // --------------------------------
 
 a {
-  color: $c-link;
+  color: map-get($color, link);
   transition: color 300ms;
 
   &:hover {
-    color: $c-link-hover;
+    color: map-get($color, link-hover);
   }
 }
 
@@ -54,8 +54,4 @@ p,
 ul,
 ol {
   padding-bottom: 1rem;
-
-  &:last-child {
-    padding-bottom: 0;
-  }
 }
