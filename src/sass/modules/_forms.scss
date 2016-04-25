@@ -1,3 +1,21 @@
+// required vars
+// --------------------------------
+
+$form-height: 32px;
+$form-spacing: 1rem;
+$form-border-width: 1px;
+
+$c-form: $c-font;
+$c-form-bg: darken($c-bg, 5);
+$c-placeholder: #888888;
+$c-form-border: darken($c-form-bg, 10);
+
+$c-valid: $c-black;
+$c-valid-bg: #9bd49b;
+$c-invalid: $c-black;
+$c-invalid-bg: #ed9696;
+
+
 // forms
 // --------------------------------
 

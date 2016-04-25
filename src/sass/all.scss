@@ -4,20 +4,12 @@
 //import: config
 @import "config";
 
-
 //import: core
-//@import "core/normalize";
+@import "core/normalize";
 @import "core/screens";
 @import "core/grid";
-//@import "core/helpers";
-
-/*
-//import: modules
-@import "modules/forms";
-@import "modules/buttons";
-
+@import "core/helpers";
 
 //import: general
 @import "general/typography";
 @import "general/page";
-*/

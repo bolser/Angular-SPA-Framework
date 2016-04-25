@@ -6,17 +6,17 @@
 
 var config = {
   css: {
-    entry: './assets/sass/all.scss',
+    src: './src/sass/all.scss',
     dest: './dist/css',
-    dir: './assets/sass'
+    dir: './src/sass'
   },
   js: {
-    entry: './app/all.js',
+    src: './app/all.js',
     dest: './dist/js',
     dir: './app'
   },
   jsLibs: {
-    entry: [
+    src: [
       './node_modules/angular/angular.js',
       './node_modules/angular-route/angular-route.js',
       './node_modules/angular-animate/angular-animate.js'
@@ -25,7 +25,7 @@ var config = {
   },
   img: {
     dest: './dist/img',
-    dir: './assets/img'
+    dir: './src/img'
   }
 };
 
@@ -40,7 +40,9 @@ var autoprefixer = require('gulp-autoprefixer'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     pngquant = require('imagemin-pngquant'),
+    rename = require('gulp-rename'),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     webpack = require('gulp-webpack');
 
@@ -62,13 +64,15 @@ gulp.task('clean', function() {
 // --------------------------------
 
 gulp.task('build-css', function() {
-  return gulp.src(config.css.entry)
-    .pipe(concat('app.min.css'))
+  return gulp.src(config.css.src)
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer({
       browsers: ['> 0.5%']
     }))
     .pipe(cleanCSS())
+    .pipe(rename('app.min.css'))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.css.dest));
 });
 
@@ -77,7 +81,7 @@ gulp.task('build-css', function() {
 // --------------------------------
 
 gulp.task('build-js', function() {
-  return gulp.src(config.js.entry)
+  return gulp.src(config.js.src)
     .pipe(webpack({
       output: {
         filename: 'app.min.js'
@@ -92,7 +96,7 @@ gulp.task('build-js', function() {
 // --------------------------------
 
 gulp.task('build-js-libs', function() {
-  return gulp.src(config.jsLibs.entry)
+  return gulp.src(config.jsLibs.src)
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest(config.jsLibs.dest));
@@ -106,8 +110,14 @@ gulp.task('compress-imgs', function() {
   return gulp.src(config.img.dir + '/**')
     .pipe(imagemin({
       progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
+      svgoPlugins: [
+        {
+          removeViewBox: false
+        }
+      ],
+      use: [
+        pngquant()
+      ]
     }))
     .pipe(gulp.dest(config.img.dest));
 });
@@ -119,12 +129,12 @@ gulp.task('compress-imgs', function() {
 gulp.task('watch-files', function() {
 
   //watch css changes
-  gulp.watch(config.css.dir  + '/**', function() {
+  gulp.watch(config.css.dir  + '/**/*.scss', function() {
     gulp.start('build-css');
   });
 
   //watch js changes
-  gulp.watch(config.js.dir  + '/**', function() {
+  gulp.watch(config.js.dir  + '/**/*.js', function() {
     gulp.start('build-js');
   });
 
