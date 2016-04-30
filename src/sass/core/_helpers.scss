@@ -1,10 +1,16 @@
 // helper classes
 // --------------------------------
 
-.clear::after {
-  display: table;
-  content: "";
-  clear: both;
+.clear {
+  &::before
+  &::after {
+    display: table;
+    content: "";
+  }
+  
+  &::after {
+    clear: both;
+  }
 }
 
 .left {
