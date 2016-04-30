@@ -1,45 +1,72 @@
-// min/max variables
+// min/max breakpoint values
 // --------------------------------
 
-$min-xs: map-get($breakpoints, xs);
-$min-sm: map-get($breakpoints, sm);
-$min-md: map-get($breakpoints, md);
-$min-lg: map-get($breakpoints, lg);
-$min-xl: map-get($breakpoints, xl);
+$min-breakpoints: (
+  "xs": map-get($breakpoints, xs),
+  "sm": map-get($breakpoints, sm),
+  "md": map-get($breakpoints, md),
+  "lg": map-get($breakpoints, lg),
+  "xl": map-get($breakpoints, xl)
+);
 
-$max-xs: ($min-sm - 1px);
-$max-sm: ($min-md - 1px);
-$max-md: ($min-lg - 1px);
-$max-lg: ($min-xl - 1px);
+$max-breakpoints: (
+  "xs": (map-get($min-breakpoints, sm) - 1px),
+  "sm": (map-get($min-breakpoints, md) - 1px),
+  "md": (map-get($min-breakpoints, lg) - 1px),
+  "lg": (map-get($min-breakpoints, xl) - 1px)
+);
 
 
-// individual breakpoints
+// target specific breakpoint
 // --------------------------------
 
-$only-xs: "only screen and (max-width: #{$max-xs})";
-$only-sm: "only screen and (min-width: #{$min-sm}) and (max-width: #{$max-sm})";
-$only-md: "only screen and (min-width: #{$min-md}) and (max-width: #{$max-md})";
-$only-lg: "only screen and (min-width: #{$min-lg}) and (max-width: #{$max-lg})";
-$only-xl: "only screen and (min-width: #{$min-xl})";
+$only-xs: "only screen and (max-width: #{map-get($max-breakpoints, xs)})";
+$only-sm: "only screen and (min-width: #{map-get($min-breakpoints, sm)}) and (max-width: #{map-get($max-breakpoints, sm)})";
+$only-md: "only screen and (min-width: #{map-get($min-breakpoints, md)}) and (max-width: #{map-get($max-breakpoints, md)})";
+$only-lg: "only screen and (min-width: #{map-get($min-breakpoints, lg)}) and (max-width: #{map-get($max-breakpoints, lg)})";
+$only-xl: "only screen and (min-width: #{map-get($min-breakpoints, xl)})";
+
+$only: (
+  "xs": $only-xs,
+  "sm": $only-sm,
+  "md": $only-md,
+  "lg": $only-lg,
+  "xl": $only-xl
+);
 
 
-// below breakpoints
+// below breakpoint
 // --------------------------------
 
-$below-sm: "only screen and (max-width: #{$max-xs})";
-$below-md: "only screen and (max-width: #{$max-sm})";
-$below-lg: "only screen and (max-width: #{$max-md})";
-$below-xl: "only screen and (max-width: #{$max-lg})";
+$below-sm: "only screen and (max-width: #{map-get($max-breakpoints, xs)})";
+$below-md: "only screen and (max-width: #{map-get($max-breakpoints, sm)})";
+$below-lg: "only screen and (max-width: #{map-get($max-breakpoints, md)})";
+$below-xl: "only screen and (max-width: #{map-get($max-breakpoints, lg)})";
+
+$below: (
+  "sm": $below-sm,
+  "md": $below-md,
+  "lg": $below-lg,
+  "xl": $below-xl
+);
 
 
-// above breakpoints
+// above breakpoint
 // --------------------------------
 
-$above-xs: "only screen and (min-width: #{$min-xs})";
-$above-sm: "only screen and (min-width: #{$min-sm})";
-$above-md: "only screen and (min-width: #{$min-md})";
-$above-lg: "only screen and (min-width: #{$min-lg})";
-$above-xl: "only screen and (min-width: #{$min-xl})";
+$above-xs: "only screen and (min-width: #{map-get($min-breakpoints, xs)})";
+$above-sm: "only screen and (min-width: #{map-get($min-breakpoints, sm)})";
+$above-md: "only screen and (min-width: #{map-get($min-breakpoints, md)})";
+$above-lg: "only screen and (min-width: #{map-get($min-breakpoints, lg)})";
+$above-xl: "only screen and (min-width: #{map-get($min-breakpoints, xl)})";
+
+$above: (
+  "xs": $above-xs,
+  "sm": $above-sm,
+  "md": $above-md,
+  "lg": $above-lg,
+  "xl": $above-xl
+);
 
 
 // ipad
@@ -47,30 +74,3 @@ $above-xl: "only screen and (min-width: #{$min-xl})";
 
 $ipad-portrait: "all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)";
 $ipad-landscape: "all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)";
-
-
-// maps
-// --------------------------------
-
-$only: (
-  xs: $only-xs,
-  sm: $only-sm,
-  md: $only-md,
-  lg: $only-lg,
-  xl: $only-xl
-);
-
-$below: (
-  sm: $below-sm,
-  md: $below-md,
-  lg: $below-lg,
-  xl: $below-xl
-);
-
-$above: (
-  xs: $above-xs,
-  sm: $above-sm,
-  md: $above-md,
-  lg: $above-lg,
-  xl: $above-xl
-);

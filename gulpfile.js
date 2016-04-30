@@ -47,16 +47,41 @@ var autoprefixer = require('gulp-autoprefixer'),
     webpack = require('gulp-webpack');
 
 
+// build tasks
+// --------------------------------
+
+gulp.task('default', ['clean'], function() {
+  gulp.start('build-css');
+  //gulp.start('build-js');
+  //gulp.start('build-js-libs');
+  //gulp.start('compress-imgs');
+  gulp.start('watch-files');
+});
+
+
+// watch for file changes
+// --------------------------------
+
+gulp.task('watch-files', function() {
+
+  //watch css changes
+  gulp.watch(config.css.dir  + '/**/*.scss', function() {
+    gulp.start('build-css');
+  });
+
+  //watch js changes
+  gulp.watch(config.js.dir  + '/**/*.js', function() {
+    gulp.start('build-js');
+  });
+
+});
+
+
 // clean
 // --------------------------------
 
 gulp.task('clean', function() {
-  return del([
-    config.css.dest,
-    config.js.dest,
-    config.jsLibs.dest,
-    config.img.dest
-  ]);
+  return del('./dist');
 });
 
 
@@ -82,12 +107,14 @@ gulp.task('build-css', function() {
 
 gulp.task('build-js', function() {
   return gulp.src(config.js.src)
+    .pipe(sourcemaps.init())
     .pipe(webpack({
       output: {
         filename: 'app.min.js'
       }
     }))
     .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.js.dest));
 });
 
@@ -97,8 +124,10 @@ gulp.task('build-js', function() {
 
 gulp.task('build-js-libs', function() {
   return gulp.src(config.jsLibs.src)
+    .pipe(sourcemaps.init())
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.jsLibs.dest));
 });
 
@@ -120,34 +149,4 @@ gulp.task('compress-imgs', function() {
       ]
     }))
     .pipe(gulp.dest(config.img.dest));
-});
-
-
-// watch for file changes
-// --------------------------------
-
-gulp.task('watch-files', function() {
-
-  //watch css changes
-  gulp.watch(config.css.dir  + '/**/*.scss', function() {
-    gulp.start('build-css');
-  });
-
-  //watch js changes
-  gulp.watch(config.js.dir  + '/**/*.js', function() {
-    gulp.start('build-js');
-  });
-
-});
-
-
-// default task
-// --------------------------------
-
-gulp.task('default', ['clean'], function() {
-  gulp.start('build-css');
-  gulp.start('build-js');
-  gulp.start('build-js-libs');
-  gulp.start('compress-imgs');
-  gulp.start('watch-files');
 });
