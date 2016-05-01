@@ -8,8 +8,6 @@ angular
   .module('app')
   .config(routes);
 
-routes.$inject = ['$routeProvider', '$locationProvider'];
-
 
 // functionality
 // --------------------------------
@@ -17,14 +15,14 @@ routes.$inject = ['$routeProvider', '$locationProvider'];
 function routes($routeProvider, $locationProvider) {
 
 
-  //html5 mode & hash prefix
+  // html5 mode & hash prefix
   $locationProvider.html5Mode(true).hashPrefix('!');
 
 
-  //routes
+  // routes
   $routeProvider
 
-    //home
+    // home
     .when('/', {
       templateUrl: '/views/home.html',
       controller: 'ExampleController',
@@ -32,13 +30,13 @@ function routes($routeProvider, $locationProvider) {
       title: 'Home'
     })
 
-    //404
+    // 404
     .when('/404', {
       templateUrl: '/views/404.html',
       title: 'Page Not Found'
     })
 
-    //catch all
+    // catch all
     .otherwise({ redirectTo: '/404' });
 
 

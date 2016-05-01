@@ -8,8 +8,6 @@ angular
   .module('app')
   .factory('exampleService', exampleService);
 
-exampleService.$inject = [];
-
 
 // functionality
 // --------------------------------
@@ -17,7 +15,7 @@ exampleService.$inject = [];
 function exampleService() {
 
 
-  //callable members
+  // callable members
   var service = {
     exampleFunctionality: exampleFunctionality
   };
@@ -25,7 +23,7 @@ function exampleService() {
   return service;
 
 
-  //service function
+  // service function
   function exampleFunctionality() {
     return false;
   };

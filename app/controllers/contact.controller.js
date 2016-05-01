@@ -8,8 +8,6 @@ angular
   .module('app')
   .controller('ContactController', ContactController);
 
-ContactController.$inject = ['$http'];
-
 
 // functionality
 // --------------------------------
@@ -17,7 +15,7 @@ ContactController.$inject = ['$http'];
 function ContactController($http) {
 
 
-  //bindable members
+  // bindable members
   var vm = this;
   vm.error = false;
   vm.loading = false;
@@ -25,22 +23,22 @@ function ContactController($http) {
   vm.success = false;
 
 
-  //submit form
+  // submit form
   function submit(user) {
 
-    //init loading
+    // init loading
     vm.loading = true;
 
-    //post data to server
+    // post data to server
     $http.post('/actions/modules/contact.php', user).then(success).catch(error);
 
-    //post success
+    // data post success
     function success(res) {
       vm.loading = false;
       vm.success = res.data;
     };
 
-    //post error
+    // data post error
     function error(res) {
       vm.loading = false;
       vm.error = res.data;
