@@ -8,8 +8,6 @@ angular
   .module('app')
   .directive('emailMask', emailMask);
 
-emailMask.$inject = [];
-
 
 // functionality
 // --------------------------------
@@ -17,7 +15,7 @@ emailMask.$inject = [];
 function emailMask() {
 
 
-  //define directive
+  // define directive
   var directive = {
     replace: true,
     restrict: 'EA',

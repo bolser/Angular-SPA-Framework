@@ -8,8 +8,6 @@ angular
   .module('app')
   .directive('exampleDirective', exampleDirective);
 
-exampleDirective.$inject = [];
-
 
 // functionality
 // --------------------------------
@@ -17,7 +15,7 @@ exampleDirective.$inject = [];
 function exampleDirective() {
 
 
-  //define directive
+  // define directive
   var directive = {
     replace: true,
     restrict: 'EA',
@@ -31,7 +29,7 @@ function exampleDirective() {
   return directive;
 
 
-  //link
+  // directive link
   function link(scope, elem, attrs) {
 
   };

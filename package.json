@@ -1,26 +1,33 @@
 {
+  "name": "spa-framework",
   "version": "1.0.0",
   "author": "Rich Cooper",
-  "name": "web-framework",
-  "private": true,
-  "dependencies": {
-    "angular": "^1.5.3",
-    "angular-touch": "^1.5.3",
-    "angular-route": "^1.5.3",
-    "angular-animate": "^1.5.3"
+  "description": "An Angular framework to build a single page application",
+  "homepage": "https://github.com/Rich-SHD/SPA-Framework#readme",
+  "repository" : { 
+    "type" : "git", 
+    "url" : "https://github.com/Rich-SHD/SPA-Framework.git"
+  },
+  "bugs": { 
+    "url" : "https://github.com/Rich-SHD/SPA-Framework/issues"
   },
   "devDependencies": {
+    "angular": "^1.5.3",    
+    "angular-animate": "^1.5.3",
+    "angular-route": "^1.5.3",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^2.2.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^1.5.3",
-    "gulp-rename": "^1.2.2",
-    "gulp-webpack": "^1.5.0",
-    "gulp-imagemin": "^2.4.0",
     "gulp-clean-css": "^2.0.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-sourcemaps": "2.0.0-alpha",
-    "imagemin-pngquant": "^4.2.2"
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-uglify": "^1.5.3",
+    "gulp-webpack": "^1.5.0",    
+    "imagemin-pngquant": "^4.2.2",
+    "ng-annotate": "^1.2.1",
+    "run-sequence": "^1.1.5"
   }
 }

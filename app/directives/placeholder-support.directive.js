@@ -8,8 +8,6 @@ angular
   .module('app')
   .directive('placeholder', placeholder);
 
-placeholder.$inject = ['$timeout'];
-
 
 // determine placeholder support
 // --------------------------------
@@ -24,7 +22,7 @@ var testInput = document.createElement('input'),
 function placeholder($timeout) {
 
 
-  //define directive
+  // define directive
   var directive = {
     restrict: 'A',
     link: link
@@ -33,31 +31,31 @@ function placeholder($timeout) {
   return directive;
 
 
-  //link
+  // directive link
   function link(scope, elem, attrs) {
 
-    //placeholder already supported or input is password
+    // placeholder already supported or input is password
     if (placeholderSupport || attrs.type === 'password') return;
 
-    //apply placeholder as value
+    // apply placeholder as value
     $timeout(replaceVal, 0);
 
-    //remove value (placeholder) on focus
+    // remove value (placeholder) on focus
     elem.bind('focus', function() {
       if (elem.val() === attrs.placeholder) $timeout(emptyVal, 0);
     });
 
-    //replace value (with placeholder) if empty on blur
+    // replace value (with placeholder) if empty on blur
     elem.bind('blur', function() {
       if (elem.val() === '') $timeout(replaceVal, 0);
     });
 
-    //empty input value
+    // empty input value
     function emptyVal() {
       elem.val('');
     };
 
-    //replace input value
+    // replace input value
     function replaceVal() {
        elem.val(attrs.placeholder);
     };

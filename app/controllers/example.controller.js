@@ -8,8 +8,6 @@ angular
   .module('app')
   .controller('ExampleController', ExampleController);
 
-ExampleController.$inject = [];
-
 
 // functionality
 // --------------------------------
@@ -17,7 +15,7 @@ ExampleController.$inject = [];
 function ExampleController() {
 
 
-  //bindable members
+  // bindable members
   var vm = this;
 
 
