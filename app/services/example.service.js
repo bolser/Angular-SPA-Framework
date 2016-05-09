@@ -15,17 +15,17 @@ angular
 function exampleService() {
 
 
-  // callable members
+  // callable functions
   var service = {
-    exampleFunctionality: exampleFunctionality
+    example: example
   };
 
   return service;
 
 
   // service function
-  function exampleFunctionality() {
-    return false;
+  function example() {
+    return;
   };
 
 
