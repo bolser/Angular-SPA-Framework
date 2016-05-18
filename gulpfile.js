@@ -10,6 +10,10 @@ var paths = {
     dir: './src/scss',
     src: './src/scss/all.scss'
   },
+  fonts: {
+    dest: './dist/fonts',
+    dir: './src/fonts'
+  },
   html: {
     dest: './dist/html',
     dir: './app'
@@ -28,7 +32,8 @@ var paths = {
     src: [
       './node_modules/angular/angular.js',
       './node_modules/angular-animate/angular-animate.js',
-      './node_modules/angular-ui-router/release/angular-ui-router.js'
+      './node_modules/angular-ui-router/release/angular-ui-router.js',
+      './node_modules/angular-update-meta/dist/update-meta.js'
     ]
   }
 };
@@ -58,17 +63,17 @@ var autoprefixer = require('gulp-autoprefixer'),
 // --------------------------------
 
 gulp.task('default', function() {
-  runSequence(
+  return runSequence(
     'clean',
-    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs'],
+    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs', 'copy-fonts'],
     'watch'
   );
 });
 
 gulp.task('production', function() {
-  runSequence(
+  return runSequence(
     'clean',
-    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs']
+    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs', 'copy-fonts']
   );
 });
 
@@ -162,4 +167,13 @@ gulp.task('compress-imgs', function() {
       ]
     }))
     .pipe(gulp.dest(paths.img.dest));
+});
+
+
+// copy fonts
+// --------------------------------
+
+gulp.task('copy-fonts', function() {
+  return gulp.src(paths.fonts.dir + '/**/*.*')
+    .pipe(gulp.dest(paths.fonts.dest));
 });
