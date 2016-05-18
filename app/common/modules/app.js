@@ -4,5 +4,6 @@
 angular
   .module('app', [
     'ngAnimate',
-    'ui.router'
+    'ui.router',
+    'updateMeta'
   ]);
