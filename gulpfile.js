@@ -10,6 +10,10 @@ var paths = {
     dir: './src/scss',
     src: './src/scss/all.scss'
   },
+  html: {
+    dest: './dist/html',
+    dir: './app'
+  },
   img: {
     dest: './dist/img',
     dir: './src/img'
@@ -46,7 +50,8 @@ var autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
-    webpack = require('gulp-webpack');
+    watch = require('gulp-watch'),
+    webpack = require('webpack-stream');
 
 
 // build tasks
@@ -68,21 +73,21 @@ gulp.task('production', function() {
 });
 
 
-// watch for file changes
+// watch files
 // --------------------------------
 
 gulp.task('watch', function() {
-
-  //watch css changes
-  gulp.watch(paths.css.dir  + '/**/*.scss', function() {
+  
+  // css changes
+  watch(paths.css.dir + '/**/*.scss', function() {
     gulp.start('build-css');
   });
-
-  //watch js changes
-  gulp.watch(paths.js.dir  + '/**/*.js', function() {
+  
+  // js changes
+  watch(paths.js.dir + '/**/*.js', function() {
     gulp.start('build-js');
   });
-
+  
 });
 
 
