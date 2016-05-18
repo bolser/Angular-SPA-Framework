@@ -26,7 +26,7 @@ function exampleService() {
   // service function
   function example() {
     return;
-  };
+  }
 
 
-};
+}

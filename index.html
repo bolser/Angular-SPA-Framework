@@ -2,22 +2,22 @@
 <html lang="en" ng-app="app">
 <head prefix="og: http://ogp.me/ns#">
 
-  <!--meta-->
+  <!-- meta -->
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0">
 
-  <!--mobile-->
+  <!-- mobile -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <!--document-->
+  <!-- page -->
   <title></title>
   <meta name="application-name" content="">
   <meta name="description" content="">
 
-  <!--facebook-->
+  <!-- facebook -->
   <meta property="og:locale" content="en_GB">
   <meta property="og:url" content="">
   <meta property="og:title" content="">
@@ -26,69 +26,52 @@
   <meta property="og:image" content="">
   <meta property="og:description" content="">
 
-  <!--twitter-->
+  <!-- twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:domain" content="">
   <meta name="twitter:title" content="">
   <meta name="twitter:image" content="">
   <meta name="twitter:description" content="">
 
-  <!--google+-->
-  <meta itemprop="name" content="">
-  <meta itemprop="image" content="">
-  <meta itemprop="description" content="">
-
-  <!--icons-->
+  <!-- icons -->
   <link rel="shortcut icon" href="/dist/img/brand/favicon.ico">
   
-  <!--microsoft icons-->
-  <meta name="msapplication-TileColor" content="#ffffff"/>
+  <!--microsoft icons -->
+  <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/dist/img/brand/tile-144x144.png">
   <meta name="msapplication-square70x70logo" content="/dist/img/brand/tile-70x70.png">
   <meta name="msapplication-square150x150logo" content="/dist/img/brand/tile-150x150.png">
   <meta name="msapplication-wide310x150logo" content="/dist/img/brand/tile-310x150.png">
   <meta name="msapplication-square310x310logo" content="/dist/img/brand/tile-310x310.png">
   
-  <!--apple icons-->
+  <!-- apple icons -->
   <link rel="apple-touch-icon" href="/dist/img/brand/apple-icon-144x144.png">
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/dist/img/brand/apple-icon-57x57.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/dist/img/brand/apple-icon-72x72.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/dist/img/brand/apple-icon-114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/dist/img/brand/apple-icon-144x144.png">
 
-  <!--css-->
+  <!-- css -->
   <link rel="stylesheet" type="text/css" href="/dist/css/app.min.css">
 
 </head>
 <body>
 
-
-  <!-- browser upgrade
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
+  <!-- browser upgrade -->
   <!--[if lte IE 8]>
     <div style="color:#fff; padding:10px; text-align:center; background:#bf6473;">
       Your browser is too old to run this site! Please <a href="http://browsehappy.com/" target="_blank" style="color:#fff; text-decoration:underline;">upgrade here</a>.
     </div>
   <![endif]-->
-  
     
-  <!-- main view
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
+  <!-- main view-->
   <main id="main">
-    <div data-container>
-      <div ng-view></div>
-    </div>
+    <div ui-view></div>
   </main>
 
-
-  <!-- script
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-
+  <!-- script -->
   <script type="text/javascript" src="/dist/js/libs.min.js"></script>
   <script type="text/javascript" src="/dist/js/app.min.js"></script>
-
 
 </body>
 </html>

@@ -6,13 +6,13 @@
 
 angular
   .module('app')
-  .directive('emailMask', emailMask);
+  .directive('ngExample', ngExample);
 
 
 // functionality
 // --------------------------------
 
-function emailMask() {
+function ngExample() {
 
 
   // define directive
@@ -20,13 +20,19 @@ function emailMask() {
     replace: true,
     restrict: 'EA',
     scope: {
-      user: '=user',
-      host: '=host'
+      example: '='
     },
-    template: '<a href="mailto:{{user}}@{{host}}">{{user}}@{{host}}</a>'
+    link: link,
+    templateUrl: '/app/directives/example.html',
   };
 
   return directive;
 
 
-};
+  // directive link
+  function link(scope, elem, attrs) {
+
+  }
+
+
+}

@@ -7,29 +7,25 @@
 var paths = {
   css: {
     dest: './dist/css',
-    dir: './src/sass',
-    src: [
-      './src/sass/all.scss'
-    ]
+    dir: './src/scss',
+    src: './src/scss/all.scss'
+  },
+  img: {
+    dest: './dist/img',
+    dir: './src/img'
   },
   js: {
     dest: './dist/js',
     dir: './app',
-    src: [
-      './app/all.js'
-    ]
+    src: './app/all.js'
   },
   jsLibs: {
     dest: './dist/js',
     src: [
       './node_modules/angular/angular.js',
-      './node_modules/angular-route/angular-route.js',
-      './node_modules/angular-animate/angular-animate.js'
+      './node_modules/angular-animate/angular-animate.js',
+      './node_modules/angular-ui-router/release/angular-ui-router.js'
     ]
-  },
-  img: {
-    dest: './dist/img',
-    dir: './src/img'
   }
 };
 
@@ -43,6 +39,7 @@ var autoprefixer = require('gulp-autoprefixer'),
     del = require('del'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
+    ngAnnotate = require('gulp-ng-annotate'),
     pngquant = require('imagemin-pngquant'),
     rename = require('gulp-rename'),
     runSequence = require('run-sequence'),
@@ -58,15 +55,15 @@ var autoprefixer = require('gulp-autoprefixer'),
 gulp.task('default', function() {
   runSequence(
     'clean',
-    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs']
+    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs'],
+    'watch'
   );
 });
 
-gulp.task('dev', function() {
+gulp.task('production', function() {
   runSequence(
     'clean',
-    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs'],
-    'watch'
+    ['build-css', 'build-js', 'build-js-libs', 'compress-imgs']
   );
 });
 
@@ -125,6 +122,7 @@ gulp.task('build-js', function() {
         filename: 'app.min.js'
       }
     }))
+    .pipe(ngAnnotate())
     .pipe(uglify())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.js.dest));
@@ -151,11 +149,9 @@ gulp.task('compress-imgs', function() {
   return gulp.src(paths.img.dir + '/**')
     .pipe(imagemin({
       progressive: true,
-      svgoPlugins: [
-        {
-          removeViewBox: false
-        }
-      ],
+      svgoPlugins: [{
+        removeViewBox: false
+      }],
       use: [
         pngquant()
       ]

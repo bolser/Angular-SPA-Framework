@@ -6,17 +6,17 @@
 
 angular
   .module('app')
-  .controller('ExampleController', ExampleController);
+  .controller('HomeController', HomeController);
 
 
 // functionality
 // --------------------------------
 
-function ExampleController() {
+function HomeController() {
 
 
   // bindable members
   var vm = this;
+  
 
-
-};
+}
