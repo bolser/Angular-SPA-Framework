@@ -35,11 +35,6 @@ function states($locationProvider, $stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: '/app/home/home.html',
       controller: 'HomeController as home'
-    })
-    
-    .state('test', {
-      url: '/test',
-      templateUrl: '/app/test/test.html'
     });
 
 
