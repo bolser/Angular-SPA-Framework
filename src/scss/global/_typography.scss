@@ -7,8 +7,8 @@
 }
 
 html {
-  color: map-get($color, font);
-  font: normal #{map-get($font, size)}/#{map-get($font, line-height)} Arial, sans-serif;
+  color: map-get($color, "font");
+  font: normal #{map-get($font, "size")}/#{map-get($font, "line-height")} Arial, sans-serif;
 }
 
 
@@ -28,8 +28,8 @@ h2 {
 }
 
 h3 {
-  font-size: map-get($font, size);
-  line-height: map-get($font, line-height);
+  font-size: map-get($font, "size");
+  line-height: map-get($font, "line-height");
   margin-bottom: 1rem;
 }
 
@@ -38,11 +38,11 @@ h3 {
 // --------------------------------
 
 a {
-  color: map-get($color, link);
+  color: map-get($color, "link");
   transition: color 300ms;
 
   &:hover {
-    color: map-get($color, link-hover);
+    color: map-get($color, "link-hover");
   }
 }
 

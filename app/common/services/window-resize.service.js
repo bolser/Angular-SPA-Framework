@@ -38,7 +38,7 @@ function windowResizeService($timeout) {
     // reset timer
     afterResizeTimers[uniqueId] = $timeout(callback, 200);
     
-  };
+  }
 
 
-};
+}

@@ -3,6 +3,6 @@
 
 angular
   .module('app', [
-    'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'ui.router'
   ]);

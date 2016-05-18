@@ -2,19 +2,18 @@
 // --------------------------------
 
 // modules
-require('./modules/app.js');
+require('./common/modules/app.js');
 
 // services
-require('./services/example.service.js');
+require('./common/services/window-resize.service.js');
 
 // directives
-require('./directives/email-mask.directive.js');
-require('./directives/placeholder-support.directive.js');
-require('./directives/example.directive.js');
+require('./common/directives/email-mask.directive.js');
+require('./common/directives/placeholder-support.directive.js');
 
-// controllers
-require('./controllers/contact.controller.js');
-require('./controllers/example.controller.js');
+// states
+require('./common/states/states.js');
+require('./common/states/state-change.run.js');
 
-// routes
-require('./routes/routes.js');
+// view controllers
+require('./home/home.controller.js');

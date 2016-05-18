@@ -3,5 +3,5 @@
 
 body {
   position: relative;
-  background: map-get($color, bg);
+  background: map-get($color, "bg");
 }
