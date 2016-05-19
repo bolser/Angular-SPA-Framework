@@ -3,14 +3,17 @@
 
 An AngularJS framework for builing single page applications.
 
-### Install
+### Development install
 
     npm install
     gulp
 
-For production, run `gulp production` instead of `gulp`.
+** Serve & live reload **
+    
+    sudo npm install -g lite-server
+    npm run dev  
 
-
-### Dev server & live reload
-
-    npm run dev
+### Production install
+    
+    npm install --production
+    gulp production
