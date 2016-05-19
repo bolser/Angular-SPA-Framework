@@ -8,7 +8,7 @@ An AngularJS framework for builing single page applications.
     npm install
     gulp
 
-** Serve & live reload **
+**Serve with live reload**
     
     sudo npm install -g lite-server
     npm run dev  

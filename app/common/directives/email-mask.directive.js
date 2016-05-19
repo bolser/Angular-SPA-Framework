@@ -14,7 +14,6 @@ angular
 
 function ngEmailMask() {
 
-
   // define directive
   var directive = {
     replace: true,
@@ -27,6 +26,5 @@ function ngEmailMask() {
   };
 
   return directive;
-
 
 }

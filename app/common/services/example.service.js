@@ -14,7 +14,6 @@ angular
 
 function exampleService() {
 
-
   // callable functions
   var service = {
     example: example
@@ -22,11 +21,9 @@ function exampleService() {
 
   return service;
 
-
-  // service function
+  // example function
   function example() {
     return;
   }
-
 
 }
