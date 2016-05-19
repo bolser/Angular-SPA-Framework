@@ -49,12 +49,12 @@ var autoprefixer = require('gulp-autoprefixer'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     ngAnnotate = require('gulp-ng-annotate'),
-    pngquant = require('imagemin-pngquant'),
     rename = require('gulp-rename'),
     runSequence = require('run-sequence'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
+    gutil = require('gulp-util'),
     watch = require('gulp-watch'),
     webpack = require('webpack-stream');
 
@@ -82,17 +82,22 @@ gulp.task('production', function() {
 // --------------------------------
 
 gulp.task('watch', function() {
-  
+
   // css changes
   watch(paths.css.dir + '/**/*.scss', function() {
-    gulp.start('build-css');
+    return gulp.start('build-css');
   });
-  
+
   // js changes
   watch(paths.js.dir + '/**/*.js', function() {
-    gulp.start('build-js');
+    return gulp.start('build-js');
   });
-  
+
+  // img changes
+  watch(paths.img.dir + '/**/*.*', function() {
+    return gulp.start('compress-imgs');
+  });
+
 });
 
 
@@ -156,16 +161,8 @@ gulp.task('build-js-libs', function() {
 // --------------------------------
 
 gulp.task('compress-imgs', function() {
-  return gulp.src(paths.img.dir + '/**')
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{
-        removeViewBox: false
-      }],
-      use: [
-        pngquant()
-      ]
-    }))
+  return gulp.src(paths.img.dir + '/**/*.*')
+    .pipe(imagemin().on('error', gutil.log))
     .pipe(gulp.dest(paths.img.dest));
 });
 
