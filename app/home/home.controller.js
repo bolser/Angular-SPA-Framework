@@ -12,11 +12,9 @@ angular
 // functionality
 // --------------------------------
 
-function HomeController() {
-
+function HomeController(windowResizeService, $window) {
 
   // bindable members
   var vm = this;
-  
-
+   
 }

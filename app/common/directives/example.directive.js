@@ -14,7 +14,6 @@ angular
 
 function ngExample() {
 
-
   // define directive
   var directive = {
     replace: true,
@@ -23,16 +22,14 @@ function ngExample() {
       example: '='
     },
     link: link,
-    templateUrl: '/app/directives/example.html',
+    template: '<div></div>'
   };
 
   return directive;
 
-
   // directive link
   function link(scope, elem, attrs) {
-
+    return;
   }
-
 
 }

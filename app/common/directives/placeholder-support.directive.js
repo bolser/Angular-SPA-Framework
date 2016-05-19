@@ -9,18 +9,10 @@ angular
   .directive('placeholder', placeholder);
 
 
-// determine placeholder support
-// --------------------------------
-
-var testInput = document.createElement('input'),
-    placeholderSupport = (testInput.placeholder !== undefined) ? true : false;
-
-
 // functionality
 // --------------------------------
 
 function placeholder($timeout) {
-
 
   // define directive
   var directive = {
@@ -30,35 +22,34 @@ function placeholder($timeout) {
 
   return directive;
 
-
   // directive link
   function link(scope, elem, attrs) {
 
     // placeholder already supported or input is password
-    if (placeholderSupport || attrs.type === 'password') {
+    if (placeholderSupport() || attrs.type === 'password') {
       return;
     }
 
     // apply placeholder as value asynchronously
     $timeout(replaceVal, 0);
 
-    // remove value (placeholder) on focus
+    // empty value if equal to placeholder on focus
     elem.bind('focus', focus);
     
     function focus() {
       if (elem.val() === attrs.placeholder) {
         $timeout(emptyVal, 0);
       }
-    };
+    }
 
-    // replace value (with placeholder) if empty on blur
+    // add placeholder value if empty on blur
     elem.bind('blur', blur);
     
     function blur() {
       if (elem.val() === '') {
         $timeout(replaceVal, 0);
       }
-    };
+    }
 
     // empty input value
     function emptyVal() {
@@ -72,5 +63,16 @@ function placeholder($timeout) {
 
   }
 
+}
 
+
+// determine placeholder support
+// --------------------------------
+
+function placeholderSupport() {
+  
+  // test browser support for placeholder
+  var testInput = document.createElement('input');
+  return (testInput.placeholder !== undefined) ? true : false;
+    
 }

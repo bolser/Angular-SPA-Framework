@@ -13,23 +13,21 @@ angular
 // --------------------------------
 
 function windowResizeService($timeout) {
-
+  
+  // callable functions
+  var service = {
+    afterResize: afterResize
+  };
   
   // persistent data
   var afterResizeTimers = {};
   
-  
-  // callable members
-  var service = {
-    afterResize: afterResize
-  };
-
+  // return service
   return service;
-
 
   // after window resize    
   function afterResize(callback, uniqueId) {
-    
+        
     // cancel timer to reset it 
     if (afterResizeTimers[uniqueId]) {
       $timeout.cancel(afterResizeTimers[uniqueId]);
@@ -39,6 +37,5 @@ function windowResizeService($timeout) {
     afterResizeTimers[uniqueId] = $timeout(callback, 200);
     
   }
-
 
 }
