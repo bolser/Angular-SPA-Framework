@@ -4,6 +4,9 @@
 // modules
 require('./common/modules/app.js');
 
+// templates
+require('./common/templates/templates.js');
+
 // services
 require('./common/services/window-resize.service.js');
 
