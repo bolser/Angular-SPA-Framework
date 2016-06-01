@@ -10,6 +10,12 @@ var paths = {
     dir: './src/scss',
     src: './src/scss/all.scss'
   },
+  cssLibs: {
+    dest: './dist/css',
+    src: [
+      './bower_components/normalize.css/normalize.css'
+    ]
+  },
   fonts: {
     dest: './dist/fonts',
     dir: null,
@@ -70,7 +76,7 @@ var autoprefixer = require('gulp-autoprefixer'),
 gulp.task('default', function() {
   return runSequence(
     'clean',
-    ['build-css', 'build-js', 'build-js-libs', 'build-html', 'compress-imgs', 'copy-fonts'],
+    ['build-css', 'build-css-libs', 'build-js', 'build-js-libs', 'build-html', 'compress-imgs', 'copy-fonts'],
     'watch'
   );
 });
@@ -78,7 +84,7 @@ gulp.task('default', function() {
 gulp.task('production', function() {
   return runSequence(
     'clean',
-    ['build-css', 'build-js', 'build-js-libs', 'build-html', 'compress-imgs', 'copy-fonts']
+    ['build-css', 'build-css-libs', 'build-js', 'build-js-libs', 'build-html', 'compress-imgs', 'copy-fonts']
   );
 });
 
@@ -131,6 +137,20 @@ gulp.task('build-css', function() {
     }))
     .pipe(cleanCSS())
     .pipe(rename('app.min.css'))
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest(paths.css.dest));
+});
+
+
+// build css libs
+// --------------------------------
+
+gulp.task('build-css-libs', function() {
+  return gulp.src(paths.cssLibs.src)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cleanCSS())
+    .pipe(rename('libs.min.css'))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(paths.css.dest));
 });
