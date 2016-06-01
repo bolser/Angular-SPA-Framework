@@ -12,8 +12,8 @@ var paths = {
   },
   fonts: {
     dest: './dist/fonts',
-    dir: './src/fonts',
-    src: './src/fonts/**/*.*'
+    dir: null,
+    src: null
   },
   html: {
     dest: './app/common/templates',
@@ -201,6 +201,8 @@ gulp.task('compress-imgs', function() {
 // --------------------------------
 
 gulp.task('copy-fonts', function() {
-  return gulp.src(paths.fonts.src)
-    .pipe(gulp.dest(paths.fonts.dest));
+  if (paths.fonts.src) {
+    return gulp.src(paths.fonts.src)
+      .pipe(gulp.dest(paths.fonts.dest));
+  }
 });

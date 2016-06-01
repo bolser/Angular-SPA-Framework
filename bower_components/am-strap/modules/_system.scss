@@ -1,0 +1,114 @@
+// system config
+// --------------------------------
+
+$am-system: (
+  "padding": 1rem,
+  "spacing": 1rem,
+  "line-height": 1.5,
+  "valid-color": #111111,
+  "valid-background": #9bd49b,
+  "invalid-color": #111111,
+  "invalid-background": #ed9696
+) !default;
+
+
+// response
+// --------------------------------
+
+[data-response] {
+  position: relative;
+  display: block;
+  font-size: 1rem;
+  line-height: map-get($am-system, "line-height");
+  padding: map-get($am-system, "padding");
+  margin-bottom: map-get($am-system, "spacing");
+
+  // response: enter & leave
+  &.ng-enter {
+    opacity: 0;
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: max-height 150ms, padding 150ms, margin 150ms, opacity 300ms ease 150ms;
+
+    &.ng-enter-active {
+      opacity: 1;
+      max-height: 6rem;
+      padding: map-get($am-system, "padding");
+      margin-bottom: map-get($am-system, "spacing");
+    }
+  }
+
+  &.ng-leave {
+    opacity:1;
+    max-height: 6rem;
+    overflow: hidden;
+    transition: max-height 150ms ease 300ms, padding 300ms ease 300ms, margin 150ms ease 300ms, opacity 300ms;
+
+    &.ng-leave-active {
+      opacity: 0;
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+// colors
+// --------------------------------
+
+[data-response~="success"] {
+  color: map-get($am-system, "valid-color");
+  background: map-get($am-system, "valid-background");
+}
+
+[data-response~="error"] {
+  color: map-get($am-system, "invalid-color");
+  background: map-get($am-system, "invalid-background");
+}
+
+
+// close
+// --------------------------------
+
+[data-response~="close"] {
+  padding-right: (map-get($am-system, "padding") * 3);
+  
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: map-get($am-system, "padding");
+    height: 1px;
+    top: map-get($am-system, "padding") + (map-get($am-system, "line-height") - 1rem);
+    right: map-get($am-system, "padding");
+    transform-origin: 50% 50%;
+  }
+  
+  &::before {
+    transform: rotate(-45deg);
+  }
+  
+  &::after {
+    transform: rotate(45deg);
+  }
+  
+  &[data-response~="success"] {
+    &::before,
+    &::after {
+      background: map-get($am-system, "valid-color");
+    }
+  }
+  
+  &[data-response~="error"] {
+    &::before,
+    &::after {
+      background: map-get($am-system, "invalid-color");
+    }
+  }
+}

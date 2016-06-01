@@ -12,7 +12,7 @@
     "README.md"
   ],
   "dependencies": {
-    "am-strap": "^1.0.0",
+    "am-strap": "^1.0.5",
     "angular": "^1.5.3",
     "angular-animate": "^1.5.3",
     "angular-ui-router": "^0.3.0",

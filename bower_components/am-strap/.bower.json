@@ -1,0 +1,39 @@
+{
+  "name": "am-strap",
+  "version": "1.0.5",
+  "author": "Rich Cooper",
+  "main": "all.scss",
+  "license": "MIT",
+  "description": "Modular styles built with SCSS using attribute modules and DRY principles",
+  "ignore": [
+    ".gitignore",
+    "bower.json",
+    "gulpfile.js",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "run-sequence": "^1.1.5"
+  },
+  "homepage": "https://github.com/Rich-SHD/AM-Strap",
+  "_release": "1.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.5",
+    "commit": "775624f7fb400f4cc491357449c913bbb87a8ee2"
+  },
+  "_source": "https://github.com/Rich-SHD/AM-Strap.git",
+  "_target": "^1.0.5",
+  "_originalSource": "am-strap"
+}

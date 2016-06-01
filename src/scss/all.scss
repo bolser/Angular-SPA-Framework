@@ -3,7 +3,8 @@
 
 @import "config";
 
-@import "../../node_modules/am-strap/all.scss";
+@import "../../bower_components/am-strap/all.scss";
 
-@import "global/typography",
+@import "global/helpers",
+        "global/typography",
         "global/page";

@@ -13,8 +13,8 @@
     "url": "https://github.com/Rich-SHD/SPA-Framework/issues"
   },
   "scripts": {
-    "dev": "lite-server -c config/bs-config.json"
-  },  
+    "dev": "lite-server -c bs-config.json"
+  },
   "dependencies": {    
     "del": "^2.2.0",
     "gulp": "^3.9.1",
