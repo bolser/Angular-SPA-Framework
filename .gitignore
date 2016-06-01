@@ -47,6 +47,7 @@ Thumbs.db
 
 npm-debug.log
 node_modules/
+bower_components/
 
 
 # compiled files
