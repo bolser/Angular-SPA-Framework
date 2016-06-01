@@ -18,19 +18,19 @@ html {
 h1 {
   font-size: 3rem;
   line-height: 1;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem;
 }
 
 h2 {
   font-size: 2rem;
   line-height: 1;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem;
 }
 
 h3 {
-  font-size: map-get($font, "size");
-  line-height: map-get($font, "line-height");
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: inherit;
+  margin: 0 0 1rem;
 }
 
 
