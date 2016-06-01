@@ -9,7 +9,7 @@
 *.so
 
 
-# packages
+# compressed packages
 # --------------------------------
 
 *.7z
@@ -42,17 +42,12 @@ ehthumbs.db
 Thumbs.db
 
 
-# sass
-# --------------------------------
-
-.sass-cache
-
-
-# npm
+# package managers
 # --------------------------------
 
 npm-debug.log
 node_modules/
+bower_components/
 
 
 # compiled files

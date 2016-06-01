@@ -5,8 +5,7 @@
     "ignored": [
       "node_modules",
       "src/**/*.*",
-      "app/**/*.js",
-      "app/**/*.html"
+      "app/**/*.js"
     ]
   }
 }
