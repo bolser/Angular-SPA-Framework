@@ -12,23 +12,10 @@
   "bugs": {
     "url": "https://github.com/Rich-SHD/SPA-Framework/issues"
   },
-<<<<<<< 51796c1d32563c11c0c639b8265e43a4becfe9c1
   "scripts": {
-    "dev": "lite-server -c config/bs-config.json"
+    "dev": "lite-server -c bs-config.json"
   },
-  "dependencies": {
-    "am-strap": "^1.0.3",
-    "angular": "^1.5.3",
-=======
-  "dependencies": {
-    "am-strap": "^1.0.0"
-  },
-  "devDependencies": {
-    "angular": "^1.5.3",    
->>>>>>> SASS updates
-    "angular-animate": "^1.5.3",
-    "angular-ui-router": "^0.3.0",
-    "angular-update-meta": "^1.8.0",
+  "dependencies": {    
     "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-angular-templatecache": "^1.8.0",

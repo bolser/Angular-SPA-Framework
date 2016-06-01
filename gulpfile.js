@@ -12,8 +12,8 @@ var paths = {
   },
   fonts: {
     dest: './dist/fonts',
-    dir: './src/fonts',
-    src: './src/fonts/**/*.*'
+    dir: null,
+    src: null
   },
   html: {
     dest: './app/common/templates',
@@ -33,10 +33,10 @@ var paths = {
   jsLibs: {
     dest: './dist/js',
     src: [
-      './node_modules/angular/angular.js',
-      './node_modules/angular-animate/angular-animate.js',
-      './node_modules/angular-ui-router/release/angular-ui-router.js',
-      './node_modules/angular-update-meta/dist/update-meta.js'
+      './bower_components/angular/angular.js',
+      './bower_components/angular-animate/angular-animate.js',
+      './bower_components/angular-ui-router/release/angular-ui-router.js',
+      './bower_components/angular-update-meta/dist/update-meta.js'
     ]
   }
 };
@@ -201,6 +201,8 @@ gulp.task('compress-imgs', function() {
 // --------------------------------
 
 gulp.task('copy-fonts', function() {
-  return gulp.src(paths.fonts.src)
-    .pipe(gulp.dest(paths.fonts.dest));
+  if (paths.fonts.src) {
+    return gulp.src(paths.fonts.src)
+      .pipe(gulp.dest(paths.fonts.dest));
+  }
 });
