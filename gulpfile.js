@@ -33,10 +33,10 @@ var paths = {
   jsLibs: {
     dest: './dist/js',
     src: [
-      './node_modules/angular/angular.js',
-      './node_modules/angular-animate/angular-animate.js',
-      './node_modules/angular-ui-router/release/angular-ui-router.js',
-      './node_modules/angular-update-meta/dist/update-meta.js'
+      './bower_components/angular/angular.js',
+      './bower_components/angular-animate/angular-animate.js',
+      './bower_components/angular-ui-router/release/angular-ui-router.js',
+      './bower_components/angular-update-meta/dist/update-meta.js'
     ]
   }
 };

@@ -1,0 +1,21 @@
+{
+  "name": "spa-framework",
+  "version": "1.0.0",
+  "author": "Rich Cooper",
+  "main": "index.html",
+  "license" : "MIT",
+  "description": "An AngularJS framework for building single page applications",
+  "ignore": [
+    ".gitignore",
+    "bower.json",
+    "package.json",
+    "README.md"
+  ],
+  "dependencies": {
+    "am-strap": "^1.0.0",
+    "angular": "^1.5.3",
+    "angular-animate": "^1.5.3",
+    "angular-ui-router": "^0.3.0",
+    "angular-update-meta": "^1.8.0"    
+  }
+}
