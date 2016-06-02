@@ -2,7 +2,7 @@
 // --------------------------------
 
 .clear {
-  &::before
+  &::before,
   &::after {
     display: table;
     content: " ";
