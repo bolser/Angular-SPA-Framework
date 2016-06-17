@@ -4,7 +4,7 @@
 // modules
 require('./common/modules/app.js');
 
-// templates
+// run
 require('../dist/js/templates.js');
 
 // services
