@@ -5,7 +5,7 @@
 require('./common/modules/app.js');
 
 // templates
-require('./common/templates/templates.js');
+require('../dist/js/templates.js');
 
 // services
 require('./common/services/window-resize.service.js');
