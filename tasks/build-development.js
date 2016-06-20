@@ -29,7 +29,7 @@ gulp.task('build-development', function() {
   return runSequence(
     'clean',
     'html',
-    ['css', 'css-libs', 'js', 'js-libs', 'images', 'fonts'],
+    ['css', 'css-libs', 'js', 'js-libs', 'images'],
     'watch'
   );
 });
