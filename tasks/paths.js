@@ -18,8 +18,7 @@ module.exports = {
   },
   fonts: {
     dest: 'dist/fonts',
-    dir: null,
-    src: null
+    src: 'src/fonts/**/*.*'
   },
   html: {
     dest: 'dist/js',
