@@ -4,13 +4,13 @@
 // modules
 require('./common/modules/app.js');
 
-// run
+// templates
 require('../dist/js/templates.js');
 
-// services
+// common services
 require('./common/services/window-resize.service.js');
 
-// directives
+// common directives
 require('./common/directives/email-mask.directive.js');
 require('./common/directives/placeholder-support.directive.js');
 

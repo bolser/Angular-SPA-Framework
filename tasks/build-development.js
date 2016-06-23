@@ -33,5 +33,3 @@ gulp.task('build-development', function() {
     'watch'
   );
 });
-
-gulp.start('build-development');
