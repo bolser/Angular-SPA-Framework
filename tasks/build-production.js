@@ -31,5 +31,3 @@ gulp.task('build-production', function() {
     ['css', 'css-libs', 'js', 'js-libs', 'images']
   );
 });
-
-gulp.start('build-production');
