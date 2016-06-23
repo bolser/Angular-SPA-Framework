@@ -1,7 +1,7 @@
 ## SPA-Framework
 
 
-An AngularJS framework for builing single page applications.
+An AngularJS framework for building single page applications.
 
 ### Development install
 
