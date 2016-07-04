@@ -6,13 +6,13 @@
 
 angular
   .module('app')
-  .factory('windowResizeService', windowResizeService);
+  .factory('WindowResizeService', WindowResizeService);
 
 
 // functionality
 // --------------------------------
 
-function windowResizeService($timeout) {
+function WindowResizeService($timeout) {
   
   // callable functions
   var service = {
