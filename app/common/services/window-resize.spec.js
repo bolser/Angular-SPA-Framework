@@ -11,9 +11,19 @@ describe('WindowResizeService', function() {
     WindowResizeService = _WindowResizeService_; 
   }));
 
-  // Verify service exists
+  // Verify service returns
   it('should exist', function() {
     expect(WindowResizeService).toBeDefined();
+  });
+  
+  // Test afterResize method
+  describe('.afterResize()', function() {
+    
+    // Verify method exists
+    it('should exist', function() {
+      expect(WindowResizeService.afterResize).toBeDefined();
+    });
+    
   });
   
 });

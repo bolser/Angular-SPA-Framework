@@ -23,8 +23,8 @@ module.exports = function(config) {
     preprocessors: {
     },
 
-    // test results reporter - possible values: dots || progress
-    reporters: ['progress'],
+    // test results reporter: dots || progress
+    reporters: ['mocha'],
 
     // web server port
     port: 9876,
@@ -32,15 +32,20 @@ module.exports = function(config) {
     // enable/disable colors in output (reporters & logs)
     colors: true,
 
-    // logging level - values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    // logging level: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
     // enable/disable file watching & auto text execution
     autoWatch: true,
 
     // start these browsers
-    browsers: ['Chrome'],
-
+    browsers: ['PhantomJS'],
+    
+    // configure phantomjs
+    phantomjsLauncher: {
+      exitOnResourceError: true
+    },
+    
     // continuous integration (capture browsers, runs tests & exit)
     singleRun: false,
 

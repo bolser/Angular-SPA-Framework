@@ -1,7 +1,7 @@
 'use strict';
 
 
-// init
+// initialise
 // --------------------------------
 
 angular
