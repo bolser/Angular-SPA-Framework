@@ -6,13 +6,13 @@
 
 angular
   .module('app')
-  .factory('exampleService', exampleService);
+  .factory('ExampleService', ExampleService);
 
 
 // functionality
 // --------------------------------
 
-function exampleService() {
+function ExampleService() {
 
   // callable functions
   var service = {
@@ -21,7 +21,7 @@ function exampleService() {
 
   return service;
 
-  // example function
+  // example
   function example() {
     return;
   }
