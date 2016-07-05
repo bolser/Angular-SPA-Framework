@@ -18,3 +18,7 @@ An AngularJS framework for building single page applications.
     bower install --production
     npm install --production
     gulp production
+    
+### Test
+
+    karma start
