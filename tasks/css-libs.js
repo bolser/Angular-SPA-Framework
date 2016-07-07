@@ -1,9 +1,6 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var cleanCSS = require('gulp-clean-css'),
     gulp = require('gulp'),
     paths = require('./paths'),
@@ -11,10 +8,7 @@ var cleanCSS = require('gulp-clean-css'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps');
 
-
-// build css libs
-// --------------------------------
-
+// Build css libs
 gulp.task('css-libs', function() {
   return gulp.src(paths.cssLibs.src)
     .pipe(sourcemaps.init())

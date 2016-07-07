@@ -1,27 +1,19 @@
 'use strict';
 
-
-// init
-// --------------------------------
-
 angular
   .module('app')
   .factory('ExampleService', ExampleService);
 
-
-// functionality
-// --------------------------------
-
 function ExampleService() {
 
-  // callable functions
+  // Callable functions
   var service = {
     example: example
   };
 
   return service;
 
-  // example
+  // Example
   function example() {
     return;
   }

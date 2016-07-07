@@ -1,20 +1,12 @@
 'use strict';
 
-
-// init
-// --------------------------------
-
 angular
   .module('app')
   .controller('HomeController', HomeController);
 
-
-// functionality
-// --------------------------------
-
 function HomeController() {
 
-  // bindable members
+  // Bindable members
   var vm = this;
   
 }

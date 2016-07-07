@@ -1,19 +1,13 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var concat = require('gulp-concat'),
     gulp = require('gulp'),
     paths = require('./paths'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify');
 
-
-// build js libs
-// --------------------------------
-
+// Build js libs
 gulp.task('js-libs', function() {
   return gulp.src(paths.jsLibs.src)
     .pipe(sourcemaps.init())

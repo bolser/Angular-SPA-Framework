@@ -1,9 +1,6 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var autoprefixer = require('gulp-autoprefixer'),
     cleanCSS = require('gulp-clean-css'),
     gulp = require('gulp'),
@@ -12,10 +9,7 @@ var autoprefixer = require('gulp-autoprefixer'),
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps');
 
-
-// build css
-// --------------------------------
-
+// Build css
 gulp.task('css', function() {
   return gulp.src(paths.css.src)
     .pipe(sourcemaps.init())

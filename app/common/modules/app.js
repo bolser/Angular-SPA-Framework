@@ -1,6 +1,3 @@
-// modules
-// --------------------------------
-
 angular
   .module('app', [
     'ngAnimate',

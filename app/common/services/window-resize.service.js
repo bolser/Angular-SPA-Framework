@@ -1,39 +1,31 @@
 'use strict';
 
-
-// init
-// --------------------------------
-
 angular
   .module('app')
   .factory('WindowResizeService', WindowResizeService);
 
-
-// functionality
-// --------------------------------
-
 function WindowResizeService($timeout) {
   
-  // callable functions
+  // Callable functions
   var service = {
     afterResize: afterResize
   };
   
-  // persistent data
+  // Persistent data
   var afterResizeTimers = {};
   
-  // return service
+  // Return service
   return service;
 
-  // after window resize    
+  // After window resize    
   function afterResize(callback, uniqueId) {
         
-    // cancel timer to reset it 
+    // Cancel timer to reset it 
     if (afterResizeTimers[uniqueId]) {
       $timeout.cancel(afterResizeTimers[uniqueId]);
     }
     
-    // reset timer
+    // Reset timer
     afterResizeTimers[uniqueId] = $timeout(callback, 200);
     
   }

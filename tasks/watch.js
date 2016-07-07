@@ -1,35 +1,29 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var gulp = require('gulp'),
     paths = require('./paths'),
     watch = require('gulp-watch');
 
-
-// watch files
-// --------------------------------
-
+// Watch files
 gulp.task('watch', function() {
 
-  // css changes
+  // Watch for css changes
   watch(paths.css.dir + '/**/*.scss', function() {
     return gulp.start('css');
   });
 
-  // js changes
+  // Watch for js changes
   watch(paths.js.dir + '/**/*.js', function() {
     return gulp.start('js');
   });
   
-  // html changes
+  // Watch for changes
   watch(paths.html.dir + '/**/*.html', function() {
     return gulp.start('html');
   });
   
-  // img changes
+  // Watch for image changes
   watch(paths.img.dir + '/**/*.*', function() {
     return gulp.start('images');
   });

@@ -1,25 +1,17 @@
 'use strict';
 
-
-// init
-// --------------------------------
-
 angular
   .module('app')
   .run(stateChange);
 
-
-// functionality
-// --------------------------------
-
 function stateChange($rootScope, $stateParams, $window) {
   
-  // state change success
+  // State change success
   $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
   
   function stateChangeSuccess(event, toState) {
     
-    // scroll to top
+    // Scroll to top of viewport
     $window.scrollTo(0, 0);
     
   }

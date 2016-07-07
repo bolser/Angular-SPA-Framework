@@ -1,20 +1,12 @@
 'use strict';
 
-
-// init
-// --------------------------------
-
 angular
   .module('app')
   .directive('placeholder', placeholder);
 
-
-// functionality
-// --------------------------------
-
 function placeholder($timeout) {
 
-  // define directive
+  // Define directive
   var directive = {
     restrict: 'A',
     link: link
@@ -22,18 +14,18 @@ function placeholder($timeout) {
 
   return directive;
 
-  // directive link
+  // Link function
   function link(scope, elem, attrs) {
 
-    // placeholder already supported or input is password
+    // Placeholder already supported or input is password
     if (placeholderSupport() || attrs.type === 'password') {
       return;
     }
 
-    // apply placeholder as value asynchronously
+    // Apply placeholder as value asynchronously
     $timeout(replaceVal, 0);
 
-    // empty value if equal to placeholder on focus
+    // Empty value if equal to placeholder on focus
     elem.bind('focus', focus);
     
     function focus() {
@@ -42,7 +34,7 @@ function placeholder($timeout) {
       }
     }
 
-    // add placeholder value if empty on blur
+    // Add placeholder value if empty on blur
     elem.bind('blur', blur);
     
     function blur() {
@@ -51,12 +43,12 @@ function placeholder($timeout) {
       }
     }
 
-    // empty input value
+    // Empty input value
     function emptyVal() {
       elem.val('');
     }
 
-    // replace input value
+    // Replace input value
     function replaceVal() {
       elem.val(attrs.placeholder);
     }
@@ -66,12 +58,12 @@ function placeholder($timeout) {
 }
 
 
-// determine placeholder support
+// Determine placeholder support
 // --------------------------------
 
 function placeholderSupport() {
   
-  // test browser support for placeholder
+  // Test browser support for placeholder
   var testInput = document.createElement('input');
   return (testInput.placeholder !== undefined) ? true : false;
     
