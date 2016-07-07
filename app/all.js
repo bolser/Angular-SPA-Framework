@@ -1,6 +1,3 @@
-// import files
-// --------------------------------
-
 // modules
 require('./common/modules/app.js');
 

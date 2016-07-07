@@ -1,16 +1,10 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var gulp = require('gulp'),
     runSequence = require('run-sequence');
 
-
-// tasks
-// --------------------------------
-
+// Tasks
 require('./clean');
 require('./css');
 require('./css-libs');
@@ -21,10 +15,7 @@ require('./js');
 require('./js-libs');
 require('./watch');
 
-
-// build
-// --------------------------------
-
+// Build
 gulp.task('build-development', function() {
   return runSequence(
     'clean',

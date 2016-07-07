@@ -1,16 +1,10 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var del = require('del'),
     gulp = require('gulp');
 
-
-// clean
-// --------------------------------
-
+// Clean
 gulp.task('clean', function() {
   return del('dist');
 });

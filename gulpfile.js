@@ -1,15 +1,9 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var gulp = require('gulp');
 
-
-// tasks
-// --------------------------------
-
+// Tasks
 gulp.task('default', function() {
   require('./tasks/build-development');
   gulp.start('build-development');

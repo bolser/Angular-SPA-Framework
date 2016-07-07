@@ -1,9 +1,6 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
     paths = require('./paths'),
@@ -12,10 +9,7 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     webpack = require('webpack-stream');
 
-
-// build js
-// --------------------------------
-
+// Build js
 gulp.task('js', function() {
   return gulp.src(paths.js.src)
     .pipe(webpack({

@@ -1,20 +1,12 @@
 'use strict';
 
-
-// init
-// --------------------------------
-
 angular
   .module('app')
   .directive('ngExample', ngExample);
 
-
-// functionality
-// --------------------------------
-
 function ngExample() {
 
-  // define directive
+  // Define directive
   var directive = {
     replace: true,
     restrict: 'EA',
@@ -27,7 +19,7 @@ function ngExample() {
 
   return directive;
 
-  // directive link
+  // Link function
   function link(scope, elem, attrs) {
     return;
   }

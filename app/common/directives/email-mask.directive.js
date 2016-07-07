@@ -1,26 +1,25 @@
+/*
+ * USAGE
+ *
+ * <ng-email-mask data-user="joe" data-host="bloggs.com"></ng-email-mask>
+ */
+ 
+ 
 'use strict';
-
-
-// init
-// --------------------------------
-
+ 
 angular
   .module('app')
   .directive('ngEmailMask', ngEmailMask);
 
-
-// functionality
-// --------------------------------
-
 function ngEmailMask() {
 
-  // define directive
+  // Define directive
   var directive = {
     replace: true,
     restrict: 'EA',
     scope: {
-      user: '=',
-      host: '='
+      user: '@',
+      host: '@'
     },
     template: '<a href="mailto:{{user}}@{{host}}">{{user}}@{{host}}</a>'
   };

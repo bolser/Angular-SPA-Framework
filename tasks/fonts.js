@@ -1,16 +1,10 @@
 'use strict';
 
-
-// modules
-// --------------------------------
-
+// Modules
 var gulp = require('gulp'),
     paths = require('./paths');
 
-
-// copy fonts
-// --------------------------------
-
+// Copy fonts
 gulp.task('fonts', function() {
   if (paths.fonts.src) {
     return gulp.src(paths.fonts.src)

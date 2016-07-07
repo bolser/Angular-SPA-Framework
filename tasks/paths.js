@@ -1,9 +1,6 @@
 'use strict';
 
-
-// paths
-// --------------------------------
-
+// Paths
 module.exports = {
   css: {
     dest: 'dist/css',
