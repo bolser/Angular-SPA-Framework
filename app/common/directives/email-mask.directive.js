@@ -1,12 +1,5 @@
-/*
- * USAGE
- *
- * <ng-email-mask data-user="joe" data-host="bloggs.com"></ng-email-mask>
- */
- 
- 
 'use strict';
- 
+
 angular
   .module('app')
   .directive('ngEmailMask', ngEmailMask);

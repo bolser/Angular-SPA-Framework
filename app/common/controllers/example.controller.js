@@ -8,5 +8,5 @@ function ExampleController() {
 
   // Bindable members
   var vm = this;
-  
+
 }

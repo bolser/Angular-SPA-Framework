@@ -3,6 +3,7 @@
   "name": "spa-framework",
   "author": "Rich Cooper",
   "license": "MIT",
+  "private": true,
   "description": "An AngularJS framework for builing single page applications",
   "homepage": "https://github.com/Rich-SHD/SPA-Framework#readme",
   "repository": {

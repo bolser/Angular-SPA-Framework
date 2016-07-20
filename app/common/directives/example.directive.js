@@ -20,7 +20,7 @@ function ngExample() {
   return directive;
 
   // Link function
-  function link(scope, elem, attrs) {
+  function link(scope, element, attrs) {
     return;
   }
 
