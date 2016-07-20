@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 angular
   .module('app')
@@ -8,5 +8,5 @@ function ExampleController() {
 
   // Bindable members
   var vm = this;
-  
+
 }

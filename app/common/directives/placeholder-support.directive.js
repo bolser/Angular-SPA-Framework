@@ -15,7 +15,7 @@ function placeholder($timeout) {
   return directive;
 
   // Link function
-  function link(scope, elem, attrs) {
+  function link(scope, element, attrs) {
 
     // Placeholder already supported or input is password
     if (placeholderSupport() || attrs.type === 'password') {
@@ -26,31 +26,31 @@ function placeholder($timeout) {
     $timeout(replaceVal, 0);
 
     // Empty value if equal to placeholder on focus
-    elem.bind('focus', focus);
+    element.bind('focus', focus);
     
     function focus() {
-      if (elem.val() === attrs.placeholder) {
+      if (element.val() === attrs.placeholder) {
         $timeout(emptyVal, 0);
       }
     }
 
     // Add placeholder value if empty on blur
-    elem.bind('blur', blur);
+    element.bind('blur', blur);
     
     function blur() {
-      if (elem.val() === '') {
+      if (element.val() === '') {
         $timeout(replaceVal, 0);
       }
     }
 
     // Empty input value
     function emptyVal() {
-      elem.val('');
+      element.val('');
     }
 
     // Replace input value
     function replaceVal() {
-      elem.val(attrs.placeholder);
+      element.val(attrs.placeholder);
     }
 
   }
@@ -59,12 +59,10 @@ function placeholder($timeout) {
 
 
 // Determine placeholder support
-// --------------------------------
-
 function placeholderSupport() {
-  
+
   // Test browser support for placeholder
   var testInput = document.createElement('input');
   return (testInput.placeholder !== undefined) ? true : false;
-    
+
 }

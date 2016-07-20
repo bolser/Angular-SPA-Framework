@@ -4,6 +4,7 @@
   "author": "Rich Cooper",
   "main": "index.html",
   "license" : "MIT",
+  "private": true,
   "description": "An AngularJS framework for building single page applications",
   "ignore": [
     ".gitignore",
@@ -12,7 +13,7 @@
     "README.md"
   ],
   "dependencies": {
-    "am-strap": "~2.0.0",
+    "am-strap": "~3.0.1",
     "angular": "~1.5.3",
     "angular-animate": "~1.5.3",
     "angular-ui-router": "~0.3.0",
