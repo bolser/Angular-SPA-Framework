@@ -55,25 +55,3 @@ ul,
 ol {
   padding-bottom: 1rem;
 }
-
-
-// Misc resets
-// --------------------------------
-
-a[disabled] {
-  touch-action: manipulation;
-  
-  &[disabled] {
-    pointer-events: none;
-  }
-}
-
-q {
-  quotes: none;
-
-  &::before,
-  &::after {
-    content: "";
-    content: none;
-  }
-}
