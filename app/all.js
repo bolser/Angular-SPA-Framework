@@ -1,19 +1,19 @@
-// modules
+// Modules
 require('./common/modules/app.js');
 
-// templates
+// Templates
 require('../dist/js/templates.js');
 
-// common services
+// Common services
 require('./common/services/window-resize.service.js');
 
-// common directives
+// Common directives
 require('./common/directives/email-mask.directive.js');
 require('./common/directives/placeholder-support.directive.js');
 
-// states
+// States
 require('./common/states/states.js');
 require('./common/states/state-change.run.js');
 
-// view controllers
+// View controllers
 require('./home/home.controller.js');
