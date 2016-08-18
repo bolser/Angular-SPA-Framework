@@ -9,6 +9,16 @@ var gulp = require('gulp'),
 // Compress images
 gulp.task('images', function() {
   return gulp.src(paths.img.src)
-    .pipe(imagemin().on('error', gutil.log))
-    .pipe(gulp.dest(paths.img.dest));
+    .pipe(imagemin([
+      imagemin.gifsicle(),
+      imagemin.jpegtran(),
+      imagemin.optipng(),
+      imagemin.svgo({
+       plugins: [
+         { removeUselessDefs: false },
+         { cleanupIDs: false}
+       ]
+     })
+    ]).on('error', gutil.log))
+    .pipe(gulp.dest(paths.img.dest));
 });
