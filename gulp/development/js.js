@@ -1,17 +1,16 @@
 'use strict';
 
 // Modules
-var gulp = require('gulp'),
+var config = require('../config'),
+    gulp = require('gulp'),
     ngAnnotate = require('gulp-ng-annotate'),
-    paths = require('./paths'),
     sourcemaps = require('gulp-sourcemaps'),
     through = require('through2'),
-    uglify = require('gulp-uglify'),
     webpack = require('webpack-stream');
 
 // Build js
 gulp.task('js', function() {
-  return gulp.src(paths.js.src)
+  return gulp.src(config.js.src)
     .pipe(webpack({
       devtool: 'source-map',
       output: {
@@ -27,7 +26,6 @@ gulp.task('js', function() {
       cb();
     }))
     .pipe(ngAnnotate())
-    .pipe(uglify())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(paths.js.dest));
+    .pipe(gulp.dest(config.js.dest));
 });

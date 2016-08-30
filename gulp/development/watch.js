@@ -1,30 +1,30 @@
 'use strict';
 
 // Modules
-var gulp = require('gulp'),
-    paths = require('./paths'),
+var config = require('../config'),
+    gulp = require('gulp'),
     watch = require('gulp-watch');
 
 // Watch files
 gulp.task('watch', function() {
 
   // Watch for css changes
-  watch(paths.css.dir + '/**/*.scss', function() {
+  watch(config.css.dir + '/**/*.scss', function() {
     return gulp.start('css');
   });
 
   // Watch for js changes
-  watch(paths.js.dir + '/**/*.js', function() {
+  watch(config.js.dir + '/**/*.js', function() {
     return gulp.start('js');
   });
   
   // Watch for changes
-  watch(paths.html.dir + '/**/*.html', function() {
+  watch(config.html.dir + '/**/*.html', function() {
     return gulp.start('html');
   });
   
   // Watch for image changes
-  watch(paths.img.dir + '/**/*.*', function() {
+  watch(config.img.dir + '/**/*.*', function() {
     return gulp.start('images');
   });
 

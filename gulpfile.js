@@ -3,14 +3,14 @@
 // Modules
 var gulp = require('gulp');
 
-// Default (development) build
+// Development build (default)
 gulp.task('default', function() {
-  require('./tasks/build-development');
-  gulp.start('build-development');
+  require('./gulp/development/build');
+  gulp.start('build');
 });
 
 // Production build
 gulp.task('production', function() {
-  require('./tasks/build-production');
-  gulp.start('build-production');
+  require('./gulp/production/build');
+  gulp.start('build');
 });

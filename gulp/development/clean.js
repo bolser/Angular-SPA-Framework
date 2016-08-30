@@ -4,7 +4,7 @@
 var del = require('del'),
     gulp = require('gulp');
 
-// Clean
+// Empty distribution directory
 gulp.task('clean', function() {
   return del('dist');
 });

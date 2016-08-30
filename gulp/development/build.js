@@ -8,17 +8,18 @@ var gulp = require('gulp'),
 require('./clean');
 require('./css');
 require('./css-libs');
-require('./fonts');
 require('./html');
 require('./images');
 require('./js');
 require('./js-libs');
+require('./watch');
 
 // Build
-gulp.task('build-production', function() {
+gulp.task('build', function() {
   return runSequence(
     'clean',
     'html',
-    ['css', 'css-libs', 'js', 'js-libs', 'images']
+    ['css', 'css-libs', 'js', 'js-libs', 'images'],
+    'watch'
   );
 });
