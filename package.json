@@ -14,7 +14,7 @@
     "url": "https://github.com/Rich-SHD/SPA-Framework/issues"
   },
   "scripts": {
-    "dev": "lite-server -c bs-config.json"
+    "server": "lite-server -c bs-config.json"
   },
   "dependencies": {    
     "del": "~2.2.0",

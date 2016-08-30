@@ -11,7 +11,7 @@ An AngularJS framework for building single page applications.
 
 **Serve with live reload**
     
-    npm run dev  
+    npm run server  
 
 ### Production install
     
