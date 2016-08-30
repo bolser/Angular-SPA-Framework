@@ -18,15 +18,15 @@ function WindowResizeService($timeout) {
   return service;
 
   // After window resize    
-  function afterResize(callback, uniqueId) {
+  function afterResize(callback, id) {
         
     // Cancel timer to reset it 
-    if (afterResizeTimers[uniqueId]) {
-      $timeout.cancel(afterResizeTimers[uniqueId]);
+    if (afterResizeTimers[id]) {
+      $timeout.cancel(afterResizeTimers[id]);
     }
     
     // Reset timer
-    afterResizeTimers[uniqueId] = $timeout(callback, 200);
+    afterResizeTimers[id] = $timeout(callback, 200);
     
   }
 
