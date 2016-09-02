@@ -21,9 +21,9 @@ exports.production = function() {
       imagemin.svgo({
        plugins: [
          { removeUselessDefs: false },
-         { cleanupIDs: false}
+         { cleanupIDs: false }
        ]
      })
-    ]))
+    ]).on('error', gutil.log))
     .pipe(gulp.dest(config.img.dest));
 }
