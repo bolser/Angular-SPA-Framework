@@ -5,12 +5,12 @@ var gulp = require('gulp');
 
 // Development build (default)
 gulp.task('default', function() {
-  require('./gulp/development/build');
+  require('./tasks/development/build');
   gulp.start('build');
 });
 
 // Production build
 gulp.task('production', function() {
-  require('./gulp/production/build');
+  require('./tasks/production/build');
   gulp.start('build');
 });
