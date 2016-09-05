@@ -1,12 +1,18 @@
 'use strict';
 
 // Modules
-var config = require('../config'),
+var config = require('./config'),
     gulp = require('gulp'),
     imagemin = require('gulp-imagemin');
 
-// Compress images
-gulp.task('images', function() {
+// Development image build
+exports.development = function() {
+  return gulp.src(config.img.src)
+    .pipe(gulp.dest(config.img.dest));
+}
+
+// Production image build
+exports.production = function() {
   return gulp.src(config.img.src)
     .pipe(imagemin([
       imagemin.gifsicle(),
@@ -20,4 +26,4 @@ gulp.task('images', function() {
      })
     ]))
     .pipe(gulp.dest(config.img.dest));
-});
+}

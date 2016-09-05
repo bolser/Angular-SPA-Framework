@@ -5,6 +5,6 @@ var del = require('del'),
     gulp = require('gulp');
 
 // Empty distribution directory
-gulp.task('clean', function() {
+module.exports = function() {
   return del('dist');
-});
+}

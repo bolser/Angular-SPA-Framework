@@ -1,11 +1,11 @@
 'use strict';
 
 // Modules
-var config = require('../config'),
+var config = require('./config'),
     gulp = require('gulp');
 
-// Copy fonts
-gulp.task('fonts', function() {
+// Process fonts
+module.exports = function() {
   return gulp.src(config.fonts.src)
     .pipe(gulp.dest(config.fonts.dest));
-});
+}
