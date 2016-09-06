@@ -1,24 +1,26 @@
 ## SPA-Framework
 
 
-An AngularJS framework for building single page applications.
+An Angular framework for building single page applications.
 
-### Development install
+### Install
+
+**Development**
 
     bower install
     npm install
     gulp
 
-**Serve with live reload**
-    
-    npm run server  
-
-### Production install
+**Production**
     
     bower install --production
     npm install --production
     gulp production
     
-### Test
+### Live reload server
+    
+    npm run server
+    
+### Unit testing
 
     karma start
