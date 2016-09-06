@@ -11,7 +11,9 @@ function ngExample() {
     replace: true,
     restrict: 'EA',
     scope: {
-      example: '='
+      oneWay: '@', // attr="hi" || attr="{{vm.hi}}"
+      twoWay: '=', // attr="vm.hi"
+      expr: '&' // attr="hi()"
     },
     link: link,
     template: '<div></div>'
