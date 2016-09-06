@@ -1,14 +1,19 @@
 'use strict';
 
 // Modules
-var gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    imagemin = require('gulp-imagemin'),
-    paths = require('./paths');
+var config = require('./config'),
+    gulp = require('gulp'),
+    imagemin = require('gulp-imagemin');
 
-// Compress images
-gulp.task('images', function() {
-  return gulp.src(paths.img.src)
+// Development image build
+exports.development = function() {
+  return gulp.src(config.img.src)
+    .pipe(gulp.dest(config.img.dest));
+}
+
+// Production image build
+exports.production = function() {
+  return gulp.src(config.img.src)
     .pipe(imagemin([
       imagemin.gifsicle(),
       imagemin.jpegtran(),
@@ -19,6 +24,6 @@ gulp.task('images', function() {
          { cleanupIDs: false}
        ]
      })
-    ]).on('error', gutil.log))
-    .pipe(gulp.dest(paths.img.dest));
-});
+    ]))
+    .pipe(gulp.dest(config.img.dest));
+}

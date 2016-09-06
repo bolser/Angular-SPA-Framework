@@ -1,13 +1,11 @@
 'use strict';
 
 // Modules
-var gulp = require('gulp'),
-    paths = require('./paths');
+var config = require('./config'),
+    gulp = require('gulp');
 
-// Copy fonts
-gulp.task('fonts', function() {
-  if (paths.fonts.src) {
-    return gulp.src(paths.fonts.src)
-      .pipe(gulp.dest(paths.fonts.dest));
-  }
-});
+// Process fonts
+module.exports = function() {
+  return gulp.src(config.fonts.src)
+    .pipe(gulp.dest(config.fonts.dest));
+}

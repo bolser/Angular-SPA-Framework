@@ -1,16 +1,42 @@
 'use strict';
 
 // Modules
-var gulp = require('gulp');
+var gulp = require('gulp'),
+    runSequence = require('run-sequence');
 
-// Default (development) build
+// Development build
 gulp.task('default', function() {
-  require('./tasks/build-development');
-  gulp.start('build-development');
+  registerTasks('development', function() {
+    runSequence(
+      'clean',
+      'html',
+      ['css', 'css-libs', 'js', 'js-libs', 'images'],
+      'watch'
+    );
+  });
 });
 
 // Production build
 gulp.task('production', function() {
-  require('./tasks/build-production');
-  gulp.start('build-production');
+  registerTasks('production', function() {
+    runSequence(
+      'clean',
+      'html',
+      ['css', 'css-libs', 'js', 'js-libs', 'images']
+    );
+  });
 });
+
+// Register tasks
+function registerTasks(env, callback) {
+  gulp.task('clean', require('./tasks/clean'));
+  gulp.task('css', require('./tasks/css')[env]);
+  gulp.task('css-libs', require('./tasks/css-libs')[env]);
+  gulp.task('fonts', require('./tasks/fonts'));
+  gulp.task('html', require('./tasks/html'));
+  gulp.task('images', require('./tasks/images')[env]);
+  gulp.task('js', require('./tasks/js')[env]);
+  gulp.task('js-libs', require('./tasks/js-libs')[env]);
+  gulp.task('watch', require('./tasks/watch'));
+  callback();
+}
