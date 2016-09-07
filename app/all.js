@@ -6,6 +6,7 @@ require('../dist/js/templates.js');
 
 // Common services
 require('./common/services/window-resize.service.js');
+require('./common/services/placeholder-support.service.js');
 
 // Common directives
 require('./common/directives/email-mask.directive.js');

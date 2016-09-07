@@ -4,7 +4,7 @@ angular
   .module('app')
   .directive('placeholder', placeholder);
 
-function placeholder($timeout) {
+function placeholder(PlaceholderSupportService, $timeout) {
 
   // Define directive
   var directive = {
@@ -18,7 +18,7 @@ function placeholder($timeout) {
   function link(scope, element, attrs) {
 
     // Placeholder already supported or input is password
-    if (placeholderSupport() || attrs.type === 'password') {
+    if (PlaceholderSupportService() || attrs.type === 'password') {
       return;
     }
 
@@ -27,7 +27,7 @@ function placeholder($timeout) {
 
     // Empty value if equal to placeholder on focus
     element.bind('focus', focus);
-    
+
     function focus() {
       if (element.val() === attrs.placeholder) {
         $timeout(emptyVal, 0);
@@ -36,7 +36,7 @@ function placeholder($timeout) {
 
     // Add placeholder value if empty on blur
     element.bind('blur', blur);
-    
+
     function blur() {
       if (element.val() === '') {
         $timeout(replaceVal, 0);
@@ -54,15 +54,5 @@ function placeholder($timeout) {
     }
 
   }
-
-}
-
-
-// Determine placeholder support
-function placeholderSupport() {
-
-  // Test browser support for placeholder
-  var testInput = document.createElement('input');
-  return (testInput.placeholder !== undefined) ? true : false;
 
 }
