@@ -27,9 +27,9 @@ function PlaceholderSupportService() {
         textarea = document.createElement('textarea'),
         support = ('placeholder' in input && 'placeholder' in textarea);
 
+    // Store & return results
     test.run = true;
     test.support = support;
-    return support;
+    return test.support;
   }
-
 }
