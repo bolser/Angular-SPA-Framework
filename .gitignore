@@ -1,4 +1,4 @@
-# compiled source
+# Compiled source
 # --------------------------------
 
 *.com
@@ -9,7 +9,7 @@
 *.so
 
 
-# compressed packages
+# Compressed packages
 # --------------------------------
 
 *.7z
@@ -22,7 +22,7 @@
 *.zip
 
 
-# logs & databases
+# Logs & databases
 # --------------------------------
 
 *.log
@@ -30,7 +30,7 @@
 *.sqlite
 
 
-# os generated files
+# OS generated files
 # --------------------------------
 
 .DS_Store
@@ -42,7 +42,7 @@ ehthumbs.db
 Thumbs.db
 
 
-# package managers
+# Package managers
 # --------------------------------
 
 npm-debug.log
@@ -50,7 +50,8 @@ node_modules/
 bower_components/
 
 
-# compiled files
+# Compiled files
 # --------------------------------
 
 dist/
+.tmp/

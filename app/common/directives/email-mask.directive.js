@@ -18,5 +18,4 @@ function ngEmailMask() {
   };
 
   return directive;
-
 }

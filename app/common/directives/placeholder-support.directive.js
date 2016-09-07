@@ -52,7 +52,5 @@ function placeholder(PlaceholderSupportService, $timeout) {
     function replaceVal() {
       element.val(attrs.placeholder);
     }
-
   }
-
 }

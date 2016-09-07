@@ -10,9 +10,11 @@ module.exports = function(config) {
     // List of files/patterns to load in browser
     files: [
       './dist/js/libs.min.js',
-      './node_modules/angular-mocks/angular-mocks.js',
       './dist/js/app.min.js',
-      './app/common/services/window-resize.spec.js'
+      './node_modules/angular-mocks/angular-mocks.js',
+      './app/common/services/window-resize.spec.js',
+      './app/common/directives/email-mask.spec.js',
+      './app/common/directives/placeholder-support.spec.js'
     ],
 
     // List of files to exclude
@@ -40,17 +42,17 @@ module.exports = function(config) {
 
     // Start these browsers
     browsers: ['PhantomJS'],
-    
+
     // Configure phantomjs
     phantomjsLauncher: {
       exitOnResourceError: true
     },
-    
+
     // Continuous integration (capture browsers, runs tests & exit)
     singleRun: false,
 
     // How many browsers to start simultaneously
     concurrency: Infinity
-    
+
   })
 }
