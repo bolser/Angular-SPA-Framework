@@ -13,7 +13,7 @@ function states($locationProvider, $stateProvider, $urlRouterProvider) {
       requireBase: false
     })
     .hashPrefix('!');
-  
+
   // Catch all redirect
   $urlRouterProvider
     .otherwise('/');

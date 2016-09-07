@@ -1,6 +1,9 @@
+'use strict';
+
 angular
   .module('app', [
     'ngAnimate',
     'ui.router',
-    'updateMeta'
+    'updateMeta',
+    'app.templates'
   ]);

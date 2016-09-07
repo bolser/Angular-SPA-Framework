@@ -17,8 +17,7 @@ module.exports = {
     src: 'src/fonts/**/*.*'
   },
   html: {
-    dest: 'dist/js',
-    dir: 'app/',
+    dest: '.tmp',
     src: 'app/**/*.html'
   },
   img: {

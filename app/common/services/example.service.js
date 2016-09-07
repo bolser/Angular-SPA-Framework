@@ -17,5 +17,4 @@ function ExampleService() {
   function example() {
     return;
   }
-
 }
