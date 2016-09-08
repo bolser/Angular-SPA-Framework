@@ -12,7 +12,7 @@ describe('ngExample directive', function() {
     $rootScope.$digest();
   }));
 
-  // Check the correct HTML is rendered
+  // Check correct HTML is rendered
   it('Renders the correct HTML', function() {
     expect(element[0].nodeName).toBe('DIV');
   });

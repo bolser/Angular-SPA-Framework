@@ -12,7 +12,7 @@ describe('ngEmailMask directive', function() {
     $rootScope.$digest();
   }));
 
-  // Check the correct link is rendered
+  // Check correct link is rendered
   it('Renders correct mailto link', function() {
     expect(element[0].nodeName).toBe('A');
     expect(element.html()).toBe('test@gmail.com');
