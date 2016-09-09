@@ -17,7 +17,7 @@
     "angular-animate": "~1.5.3",
     "angular-ui-router": "~0.3.0",
     "angular-update-meta": "~1.8.0",
-    "bolser-am-strap": "~3.0.1",
+    "bolser-am-strap": "~3.0.2",
     "bourbon": "~4.2.7",
     "normalize.css": "~4.1.1"
   }
