@@ -9,12 +9,23 @@ module.exports = function(config) {
 
     // List of files/patterns to load in browser
     files: [
+
+      // Libs
       './dist/js/libs.min.js',
       './dist/js/app.min.js',
       './node_modules/angular-mocks/angular-mocks.js',
-      './app/common/services/window-resize.spec.js',
-      './app/common/directives/email-mask.spec.js',
-      './app/common/directives/placeholder-support.spec.js'
+
+      // Services
+      './app/common/services/window-resize.service.spec.js',
+      './app/common/services/placeholder-support.service.spec.js',
+
+      // Directives
+      './app/common/directives/email-mask.directive.spec.js',
+      './app/common/directives/placeholder.directive.spec.js',
+
+      // Controllers
+      './app/home/home.controller.spec.js',
+
     ],
 
     // List of files to exclude

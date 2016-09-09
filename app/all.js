@@ -11,7 +11,7 @@ require('./common/services/placeholder-support.service.js');
 
 // Common directives
 require('./common/directives/email-mask.directive.js');
-require('./common/directives/placeholder-support.directive.js');
+require('./common/directives/placeholder.directive.js');
 
 // States
 require('./common/states/states.js');
