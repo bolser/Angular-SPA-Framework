@@ -14,7 +14,7 @@ describe('ExampleController', function() {
   // Check controller function executes correctly
   it('Should define vm.result', function() {
     ExampleController.example();
-    expect(ExampleController.result).toBe('example');
+    expect(ExampleController.result).toBe('answer');
   });
 
 });

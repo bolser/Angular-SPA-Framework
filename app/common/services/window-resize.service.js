@@ -12,7 +12,7 @@ function WindowResizeService($timeout) {
   return service;
 
   // After window resize
-  function service(callback, id) {
+  function service(id, callback) {
 
     // Cancel existing timeout with id
     if (afterResizeTimers[id]) {

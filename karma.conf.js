@@ -21,7 +21,10 @@ module.exports = function(config) {
 
       // Directives
       './app/common/directives/email-mask.directive.spec.js',
-      './app/common/directives/placeholder.directive.spec.js'
+      './app/common/directives/placeholder.directive.spec.js',
+
+      // Controllers
+      './app/home/home.controller.spec.js',
 
     ],
 

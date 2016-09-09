@@ -12,7 +12,7 @@ function ExampleController() {
 
   // Example function
   function example() {
-    vm.result = 'example';
+    vm.result = 'answer';
   }
 
 }
