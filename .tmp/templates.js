@@ -1,1 +1,0 @@
-angular.module("app.templates").run(["$templateCache", function($templateCache) {$templateCache.put("/app/home/home.html","<update-title title=\"\"></update-title>\n<update-meta name=\"description\" content=\"\"></update-meta>\n\nasdfsdf");}]);
