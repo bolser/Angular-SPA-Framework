@@ -11,7 +11,7 @@ var browserSync = require('browser-sync').create(),
 module.exports = function() {
 
   // Browser sync config
-  var opts = {
+  var options = {
     injectChanges: config.server.injectChanges,
     files: config.server.files,
     watchOptions: config.server.watchOptions,
@@ -28,5 +28,5 @@ module.exports = function() {
   }
 
   // Initialise browser sync
-  browserSync.init(opts);
+  browserSync.init(options);
 }
