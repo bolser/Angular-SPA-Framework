@@ -25,6 +25,9 @@ gulp.task('production', function() {
   );
 });
 
+// Development server
+gulp.task('server', require('./tasks/server'));
+
 // Register tasks
 function registerTasks(env) {
   gulp.task('clean', require('./tasks/clean'));

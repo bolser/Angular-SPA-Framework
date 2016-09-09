@@ -3,6 +3,7 @@
 // Modules
 var config = require('./config'),
     gulp = require('gulp'),
+    runSequence = require('run-sequence'),
     watch = require('gulp-watch');
 
 // Watch files
@@ -10,22 +11,22 @@ module.exports = function() {
 
   // CSS changes
   watch(config.css.dir + '/**/*.scss', function() {
-    return gulp.start('css');
+    return runSequence('css');
   });
 
   // JS changes
   watch(config.js.dir + '/**/*.js', function() {
-    return gulp.start('js');
+    return runSequence('js');
   });
 
   // HTML changes
   watch(config.html.dir + '/**/*.html', function() {
-    return gulp.start('html');
+    return runSequence('html', 'js');
   });
 
   // Image changes
   watch(config.img.dir + '/**/*.*', function() {
-    return gulp.start('images');
+    return runSequence('images');
   });
 
 }
