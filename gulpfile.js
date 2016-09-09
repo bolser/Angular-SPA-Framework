@@ -26,7 +26,10 @@ gulp.task('production', function() {
 });
 
 // Development server
-gulp.task('server', require('./tasks/server'));
+gulp.task('server', function() {
+  gulp.task('browser-sync', require('./tasks/server'));
+  runSequence('browser-sync');
+});
 
 // Register tasks
 function registerTasks(env) {
