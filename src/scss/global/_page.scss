@@ -50,3 +50,11 @@ td,
 th {
   padding: 0;
 }
+
+
+// Forms
+// --------------------------------
+
+::-webkit-input-placeholder {
+  opacity: 1; // Fixes Edge placeholder bug
+}
