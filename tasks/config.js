@@ -18,6 +18,7 @@ module.exports = {
   },
   html: {
     dest: '.tmp',
+    dir: 'app',
     src: 'app/**/*.html'
   },
   img: {

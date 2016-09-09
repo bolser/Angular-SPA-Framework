@@ -3,6 +3,7 @@
 // Modules
 var config = require('./config'),
     gulp = require('gulp'),
+    gutil = require('gulp-util'),
     imagemin = require('gulp-imagemin');
 
 // Development image build
@@ -19,11 +20,11 @@ exports.production = function() {
       imagemin.jpegtran(),
       imagemin.optipng(),
       imagemin.svgo({
-       plugins: [
-         { removeUselessDefs: false },
-         { cleanupIDs: false }
-       ]
-     })
+        plugins: [
+          { removeUselessDefs: false },
+          { cleanupIDs: false }
+        ]
+      })
     ]).on('error', gutil.log))
     .pipe(gulp.dest(config.img.dest));
 }
