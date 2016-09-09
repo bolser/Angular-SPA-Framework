@@ -39,5 +39,19 @@ module.exports = {
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-update-meta/dist/update-meta.js'
     ]
-  }
+  },
+  server: {
+    injectChanges: true,
+    files: ['./**/*.{html,css,js,png,jpg,svg,gif}'],
+    watchOptions: {
+      ignored: [
+        'bower_components',
+        'node_modules',
+        '.tmp/**/*.*',
+        'src/**/*.*',
+        'app/**/*.*'
+      ]
+    }
+  },
+  compileDirs: ['dist', '.tmp']
 };

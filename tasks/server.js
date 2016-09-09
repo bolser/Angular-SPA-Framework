@@ -1,7 +1,8 @@
 'use strict';
 
 // Modules
-var browserSync = require("browser-sync").create(),
+var browserSync = require('browser-sync').create(),
+    config = require('./config'),
     fallback = require('connect-history-api-fallback'),
     gulp = require('gulp'),
     log = require('connect-logger');
@@ -10,18 +11,10 @@ var browserSync = require("browser-sync").create(),
 module.exports = function() {
 
   // Browser sync config
-  var config = {
-    injectChanges: true,
-    files: ['./**/*.{html,css,js,png,jpg,svg,gif}'],
-    watchOptions: {
-      ignored: [
-        'bower_components',
-        'node_modules',
-        '.tmp/**/*.*',
-        'src/**/*.*',
-        'app/**/*.*'
-      ]
-    },
+  var opts = {
+    injectChanges: config.server.injectChanges,
+    files: config.server.files,
+    watchOptions: config.server.watchOptions,
     server: {
       baseDir: './',
        middleware: [
@@ -35,5 +28,5 @@ module.exports = function() {
   }
 
   // Initialise browser sync
-  browserSync.init(config);
+  browserSync.init(opts);
 }
