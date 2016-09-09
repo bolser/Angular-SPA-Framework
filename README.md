@@ -19,7 +19,7 @@ An Angular framework for building single page applications.
     
 ### Live reload server
     
-    npm run server
+    gulp server
     
 ### Unit testing
 
