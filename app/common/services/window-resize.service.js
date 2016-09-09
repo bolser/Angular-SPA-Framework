@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('app')
+  .module('app.services')
   .factory('WindowResizeService', WindowResizeService);
 
 function WindowResizeService($timeout) {
@@ -22,5 +22,4 @@ function WindowResizeService($timeout) {
     // Create new timeout
     afterResizeTimers[id] = $timeout(callback, 200);
   }
-
 }

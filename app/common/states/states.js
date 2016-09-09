@@ -25,5 +25,4 @@ function states($locationProvider, $stateProvider, $urlRouterProvider) {
       templateUrl: '/app/home/home.html',
       controller: 'HomeController as home'
     });
-
 }

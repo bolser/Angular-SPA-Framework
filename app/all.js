@@ -1,6 +1,10 @@
 // Modules
-require('./common/modules/app.js');
-require('./common/modules/app.templates.js');
+require('./common/modules/app.module.js');
+require('./common/modules/app.controllers.module.js');
+require('./common/modules/app.directives.module.js');
+require('./common/modules/app.services.module.js');
+require('./common/modules/app.states.module.js');
+require('./common/modules/app.templates.module.js');
 
 // Templates
 require('../.tmp/templates.js');
