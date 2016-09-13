@@ -20,10 +20,10 @@ function HttpInterceptorService($injector) {
   }
 
   // Handle error response
-  function responseError(rejection, $state) {
+  function responseError(rejection) {
 
     // Handle bypass requests
-    if (rejection.config.bypassInterceptor) {
+    if (angular.isDefined(rejection.config) && rejection.config.bypassInterceptor) {
       return rejection;
     }
 
