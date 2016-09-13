@@ -14,7 +14,7 @@ describe('ExampleService', function() {
   // Check service exists with methods
   it('Exists with required methods', function() {
     expect(ExampleService).toBeDefined();
-    expect(ExampleService.example).toBeDefined();
+    expect(angular.isFunction(ExampleService.example)).toBe(true);
   });
 
 });

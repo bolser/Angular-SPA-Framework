@@ -13,7 +13,7 @@ describe('WindowResizeService', function() {
 
   // Check service exists with methods
   it('Exists with required methods', function() {
-    expect(WindowResizeService).toBeDefined();
+    expect(angular.isFunction(WindowResizeService)).toBe(true);
   });
 
 });

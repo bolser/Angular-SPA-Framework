@@ -13,7 +13,7 @@ describe('PlaceholderSupportService', function() {
 
   // Check service exists with methods
   it('Exists with required methods', function() {
-    expect(PlaceholderSupportService).toBeDefined();
+    expect(angular.isFunction(PlaceholderSupportService)).toBe(true);
   });
 
 });
