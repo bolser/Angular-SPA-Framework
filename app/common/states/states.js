@@ -47,5 +47,4 @@ function states($locationProvider, $stateProvider, $urlRouterProvider) {
         }
       }
     });
-
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('app')
+  .module('app.directives')
   .directive('ngExample', ngExample);
 
 function ngExample() {

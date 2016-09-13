@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('app')
+  .module('app.controllers')
   .controller('ExampleController', ExampleController);
 
 function ExampleController() {

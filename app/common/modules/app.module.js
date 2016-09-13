@@ -5,5 +5,8 @@ angular
     'ngAnimate',
     'ui.router',
     'updateMeta',
+    'app.controllers',
+    'app.directives',
+    'app.services',
     'app.templates'
   ]);

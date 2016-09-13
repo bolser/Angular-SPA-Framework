@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('app')
+  .module('app.directives')
   .directive('placeholder', placeholder);
 
 function placeholder(PlaceholderSupportService, $timeout) {

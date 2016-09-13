@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('app')
+  .module('app.services')
   .factory('PlaceholderSupportService', PlaceholderSupportService);
 
 function PlaceholderSupportService() {
