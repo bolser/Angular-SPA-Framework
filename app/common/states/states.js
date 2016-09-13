@@ -16,14 +16,36 @@ function states($locationProvider, $stateProvider, $urlRouterProvider) {
 
   // Catch all redirect
   $urlRouterProvider
-    .otherwise('/');
+    .otherwise('/404');
 
   // Define states
   $stateProvider
-    .state('home', {
+    .state('app', {
       url: '/',
-      templateUrl: '/app/home/home.html',
-      controller: 'HomeController as home'
+      views: {
+        '@': {
+          templateUrl: '/app/home/home.html',
+          controller: 'HomeController as home'
+        }
+      }
+    })
+
+    .state('404', {
+      url: '/404',
+      views: {
+        '@': {
+          templateUrl: '/app/error/404.html'
+        }
+      }
+    })
+
+    .state('error', {
+      url: '/error',
+      views: {
+        '@': {
+          templateUrl: '/app/error/error.html'
+        }
+      }
     });
 
 }
