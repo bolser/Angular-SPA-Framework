@@ -28,22 +28,21 @@ function HttpInterceptor($injector) {
       return rejection;
     }
 
-    // Get $state via the injector or a circular dependency occurs
+    // Get $state via $injector to avoid a circular dependency
     var stateService = $injector.get('$state');
 
     switch (response.status) {
       case 404:
-        return stateService.go('app.404');
+        return stateService.go('404');
         break;
       default:
-        return stateService.go('app.error');
+        return stateService.go('error');
     }
   }
 
 }
 
+// Push interceptor onto the stack
 function config($httpProvider) {
-
-  // Push interceptor onto the stack
   $httpProvider.interceptors.push('HttpInterceptor');
 }
