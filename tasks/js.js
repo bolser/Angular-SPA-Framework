@@ -3,6 +3,7 @@
 // Modules
 var config = require('./config'),
     gulp = require('gulp'),
+    gutil = require('gulp-util'),
     ngAnnotate = require('gulp-ng-annotate'),
     sourcemaps = require('gulp-sourcemaps'),
     through = require('through2'),
@@ -17,13 +18,16 @@ exports.development =  function() {
       output: {
         filename: 'app.min.js'
       }
-    }))
+    })).on('error', function() {
+      this.emit('end');
+    })
     .pipe(sourcemaps.init({
       loadMaps: true
     }))
-    .pipe(through.obj(function (file, enc, cb) {
-      var isSourceMap = /\.map$/.test(file.path);
-      if (!isSourceMap) this.push(file);
+    .pipe(through.obj(function(file, enc, cb) {
+      if (!/\.map$/.test(file.path)) {
+        this.push(file);
+      }
       cb();
     }))
     .pipe(ngAnnotate())
