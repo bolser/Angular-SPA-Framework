@@ -21,7 +21,8 @@ gulp.task('production', function() {
   runSequence(
     'clean',
     'html',
-    ['css', 'js', 'js-libs', 'images']
+    ['css', 'js', 'js-libs', 'images'],
+    'rev-files'
   );
 });
 
@@ -41,6 +42,6 @@ function registerTasks(env) {
   gulp.task('js', require('./tasks/js')[env]);
   gulp.task('js-libs', require('./tasks/js-libs')[env]);
   gulp.task('rev-files', require('./tasks/rev-files'));
-  gulp.task('rev-replace', require('./tasks/rev-replace'));
+  gulp.task('rev-references', require('./tasks/rev-references'));
   gulp.task('watch', require('./tasks/watch'));
 }

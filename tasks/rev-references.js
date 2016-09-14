@@ -12,4 +12,4 @@ module.exports = function() {
   return gulp.src('./index.html')
     .pipe(revReplace({manifest: manifest}))
     .pipe(gulp.dest(config.compile.dest));
-}
+};
