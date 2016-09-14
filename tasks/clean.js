@@ -7,5 +7,5 @@ var config = require('./config'),
 
 // Empty distribution directory
 module.exports = function() {
-  return del(config.compileDirs);
+  return del([config.compile.dest, config.compile.temp]);
 }

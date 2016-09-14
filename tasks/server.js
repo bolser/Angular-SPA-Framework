@@ -13,8 +13,10 @@ module.exports = function() {
   // Browser sync config
   var options = {
     injectChanges: config.server.injectChanges,
-    files: config.server.files,
-    watchOptions: config.server.watchOptions,
+    files: config.server.watchFiles,
+    watchOptions: {
+      ignored: config.server.ignoreFiles
+    },
     server: {
       baseDir: './',
        middleware: [

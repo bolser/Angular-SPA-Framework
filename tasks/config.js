@@ -1,57 +1,55 @@
 'use strict';
 
 module.exports = {
-  css: {
-    dest: 'dist/css',
-    dir: 'src/scss',
-    src: 'src/scss/all.scss'
+  compile: {
+    dest: './dist',
+    temp: './.tmp'
   },
-  cssLibs: {
-    dest: 'dist/css',
-    src: [
-      'bower_components/normalize.css/normalize.css'
-    ]
+  css: {
+    dest: './dist/css',
+    filename: 'app.min.css',
+    src: './src/scss/all.scss',
+    watch: './src/scss/**/*.scss',
   },
   fonts: {
-    dest: 'dist/fonts',
-    src: 'src/fonts/**/*.*'
+    dest: './dist/fonts',
+    src: './src/fonts/**/*.*'
   },
   html: {
-    dest: '.tmp',
-    dir: 'app',
-    src: 'app/**/*.html'
+    src: './app/**/*.html',
+    watch: './app/**/*.html'
   },
   img: {
-    dest: 'dist/img',
-    dir: 'src/img',
-    src: 'src/img/**/*.*'
+    dest: './dist/img',
+    src: './src/img/**/*.*',
+    watch: './src/img/**/*.*'
   },
   js: {
-    dest: 'dist/js',
-    dir: 'app',
-    src: 'app/all.js'
+    dest: './dist/js',
+    filename: 'app.min.js',
+    src: './app/all.js',
+    watch: './app/**/*.js'
   },
   jsLibs: {
-    dest: 'dist/js',
+    dest: './dist/js',
+    filename: 'libs.min.js',
     src: [
-      'bower_components/angular/angular.js',
-      'bower_components/angular-animate/angular-animate.js',
-      'bower_components/angular-ui-router/release/angular-ui-router.js',
-      'bower_components/angular-update-meta/dist/update-meta.js'
+      './bower_components/angular/angular.js',
+      './bower_components/angular-animate/angular-animate.js',
+      './bower_components/angular-ui-router/release/angular-ui-router.js',
+      './bower_components/angular-update-meta/dist/update-meta.js'
     ]
   },
   server: {
     injectChanges: true,
-    files: ['./**/*.{html,css,js,png,jpg,svg,gif}'],
-    watchOptions: {
-      ignored: [
-        'bower_components',
-        'node_modules',
-        '.tmp/**/*.*',
-        'src/**/*.*',
-        'app/**/*.*'
-      ]
-    }
-  },
-  compileDirs: ['dist', '.tmp']
+    watchFiles: ['./**/*.{html,css,js,png,jpg,svg,gif}'],
+    ignoreFiles: [
+      'bower_components',
+      'node_modules',
+      'tasks/**/*.*',
+      '.tmp/**/*.*',
+      'src/**/*.*',
+      'app/**/*.*'
+    ]
+  }
 };

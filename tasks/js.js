@@ -16,7 +16,7 @@ exports.development =  function() {
     .pipe(webpack({
       devtool: 'source-map',
       output: {
-        filename: 'app.min.js'
+        filename: config.js.filename
       }
     })).on('error', function() {
       this.emit('end');
@@ -40,7 +40,7 @@ exports.production = function() {
   return gulp.src(config.js.src)
     .pipe(webpack({
       output: {
-        filename: 'app.min.js'
+        filename: config.js.filename
       }
     }))
     .pipe(ngAnnotate())
