@@ -1,16 +1,15 @@
 'use strict';
 
 angular
-  .module('app')
-  .config(config)
-  .factory('HttpInterceptor', HttpInterceptor);
+  .module('app.services')
+  .factory('HttpInterceptorService', HttpInterceptorService);
 
-function HttpInterceptor($injector) {
+function HttpInterceptorService($injector) {
 
   // Callable functions
   var service = {
     response: response,
-    responseError: error
+    responseError: responseError
   };
 
   return service;
@@ -21,28 +20,23 @@ function HttpInterceptor($injector) {
   }
 
   // Handle error response
-  function error(rejection, $state) {
+  function responseError(rejection) {
 
     // Handle bypass requests
-    if (rejection.config.bypassInterceptor) {
+    if (angular.isDefined(rejection.config) && rejection.config.bypassInterceptor) {
       return rejection;
     }
 
     // Get $state via $injector to avoid a circular dependency
-    var stateService = $injector.get('$state');
+    var state = $injector.get('$state');
 
-    switch (response.status) {
+    switch (rejection.status) {
       case 404:
-        return stateService.go('404');
+        return state.go('404');
         break;
       default:
-        return stateService.go('error');
+        return state.go('error');
     }
   }
 
-}
-
-// Push interceptor onto the stack
-function config($httpProvider) {
-  $httpProvider.interceptors.push('HttpInterceptor');
 }

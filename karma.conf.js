@@ -18,6 +18,7 @@ module.exports = function(config) {
       // Services
       './app/common/services/window-resize.service.spec.js',
       './app/common/services/placeholder-support.service.spec.js',
+      './app/common/services/http-interceptor.service.spec.js',
 
       // Directives
       './app/common/directives/email-mask.directive.spec.js',
