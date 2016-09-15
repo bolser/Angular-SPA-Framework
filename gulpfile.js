@@ -22,7 +22,7 @@ gulp.task('production', function() {
     'clean',
     'html',
     ['css', 'js', 'js-libs', 'images'],
-    'rev-files'
+    'rev'
   );
 });
 
@@ -41,7 +41,6 @@ function registerTasks(env) {
   gulp.task('images', require('./tasks/images')[env]);
   gulp.task('js', require('./tasks/js')[env]);
   gulp.task('js-libs', require('./tasks/js-libs')[env]);
-  gulp.task('rev-files', require('./tasks/rev-files'));
-  gulp.task('rev-references', require('./tasks/rev-references'));
+  gulp.task('rev', require('./tasks/rev'));
   gulp.task('watch', require('./tasks/watch'));
 }
