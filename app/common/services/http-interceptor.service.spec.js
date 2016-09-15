@@ -1,20 +1,15 @@
 describe('HttpInterceptorService', function() {
 
   // Bindable members
-  var $window,
-      HttpInterceptorService;
+  var HttpInterceptorService;
 
-  // Load module
-  beforeEach(module('app.services'));
-
-  // Set window value
-  beforeEach(function () {
-    $window = { location: { href: null } };
-
-    module(function($provide) {
-      $provide.value('$window', $window);
-    });
-  });
+  // Mock state
+  var statePromiseMock = {};
+  beforeEach(module('app.services', {
+    $state: {
+      go: jasmine.createSpy().and.returnValue(statePromiseMock)
+    }
+  }));
 
   // Bind references to global variables
   beforeEach(inject(function(_HttpInterceptorService_) {
@@ -28,15 +23,18 @@ describe('HttpInterceptorService', function() {
     expect(angular.isFunction(HttpInterceptorService.responseError)).toBe(true);
   });
 
-  // Test 404 HTTP response
-  describe('When HTTP response 404', function() {
-    beforeEach(function() {
-      HttpInterceptorService.responseError({ status: 404 });
-    });
+  // Check interceptor redirects to correct state
+  it('Redirects on error status', inject(function($state) {
 
-    it('Sets window location', function() {
-      expect($window.location.href).toBe('/404');
-    });
-  });
+    // 404 status
+    var state404Promise = HttpInterceptorService.responseError({status: 404});
+    expect($state.go).toHaveBeenCalledWith('404');
+    expect(state404Promise).toBe(statePromiseMock);
+
+    // Error status
+    var state500Promise = HttpInterceptorService.responseError({status: 500});
+    expect($state.go).toHaveBeenCalledWith('error');
+    expect(state500Promise).toBe(statePromiseMock);
+  }))
 
 });
