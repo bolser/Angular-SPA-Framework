@@ -4,7 +4,7 @@ angular
   .module('app.controllers')
   .controller('HomeController', HomeController);
 
-function HomeController(HttpInterceptorService) {
+function HomeController() {
 
   // Bindable members
   var vm = this;
