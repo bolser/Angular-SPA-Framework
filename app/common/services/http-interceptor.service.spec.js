@@ -35,6 +35,6 @@ describe('HttpInterceptorService', function() {
     var state500Promise = HttpInterceptorService.responseError({status: 500});
     expect($state.go).toHaveBeenCalledWith('error');
     expect(state500Promise).toBe(statePromiseMock);
-  }))
+  }));
 
 });
