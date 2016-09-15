@@ -9,8 +9,4 @@ function HomeController(HttpInterceptorService) {
   // Bindable members
   var vm = this;
 
-  //HttpInterceptorService.responseError({
-  //  status: 401
-  //});
-
 }
