@@ -19,18 +19,13 @@ gulp.task('rev', require('./tasks/rev')[env]);
 gulp.task('watch', require('./tasks/watch'));
 
 // Development build
-gulp.task('development', function() {
+gulp.task('default', function() {
   runSequence('clean', 'html', ['css', 'js', 'js-libs', 'images'], 'rev', 'watch');
 });
 
 // Production build
 gulp.task('production', function() {
   runSequence('clean', 'html', ['css', 'js', 'js-libs', 'images'], 'rev');
-});
-
-// Environment build
-gulp.task('default', function() {
-  gulp.start(env);
 });
 
 // Server

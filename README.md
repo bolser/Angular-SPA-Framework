@@ -8,14 +8,15 @@ An Angular framework for building single page applications.
 **Development**
 
     bower install
-    npm install
+    npm install    
     gulp
 
 **Production**
     
+   	export APP_ENV=production
     bower install --production
-    npm install --production
-    gulp production
+    npm install --producion
+ 	gulp production
     
 ### Live reload server
     
