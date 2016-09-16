@@ -9,24 +9,28 @@ var config = require('./config'),
 // Watch files
 module.exports = function() {
 
-  // CSS changes
-  watch(config.css.dir + '/**/*.scss', function() {
+  // CSS
+  watch(config.css.watch, function() {
     return runSequence('css');
   });
 
-  // JS changes
-  watch(config.js.dir + '/**/*.js', function() {
+  // JS
+  watch(config.js.watch, function() {
     return runSequence('js');
   });
 
-  // HTML changes
-  watch(config.html.dir + '/**/*.html', function() {
+  // HTML
+  watch(config.html.watch, function() {
     return runSequence('html', 'js');
   });
 
-  // Image changes
-  watch(config.img.dir + '/**/*.*', function() {
+  // Imagez
+  watch(config.img.watch, function() {
     return runSequence('images');
   });
 
+  // Index
+  watch('./index.html', function() {
+    return runSequence('rev');
+  });
 }

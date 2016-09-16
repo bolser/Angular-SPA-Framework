@@ -1,9 +1,7 @@
-// Import
-// --------------------------------
-
 @import "config";
 
 @import "../../bower_components/bourbon/app/assets/stylesheets/bourbon",
+        "../../bower_components/normalize.css/normalize.css",
         "../../bower_components/bolser-am-strap/all";
 
 @import "global/helpers",

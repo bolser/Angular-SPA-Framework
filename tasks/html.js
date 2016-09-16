@@ -12,5 +12,5 @@ module.exports = function() {
       module: 'app.templates',
       root: '/app'
     }))
-    .pipe(gulp.dest(config.html.dest));
+    .pipe(gulp.dest(config.compile.temp));
 }

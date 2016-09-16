@@ -13,12 +13,16 @@ module.exports = function() {
   // Browser sync config
   var options = {
     injectChanges: config.server.injectChanges,
-    files: config.server.files,
-    watchOptions: config.server.watchOptions,
+    files: config.server.watchFiles,
+    watchOptions: {
+      ignored: config.server.ignoreFiles
+    },
     server: {
-      baseDir: './',
+      baseDir: './dist',
        middleware: [
-        log({ format: '%date %status %method %url' }),
+        log({
+          format: '%date %status %method %url'
+        }),
         fallback({
           index: '/index.html',
           htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']

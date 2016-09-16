@@ -11,7 +11,7 @@ var concat = require('gulp-concat'),
 exports.development = function() {
   return gulp.src(config.jsLibs.src)
     .pipe(sourcemaps.init())
-    .pipe(concat('libs.min.js'))
+    .pipe(concat(config.jsLibs.filename))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.jsLibs.dest));
 }
@@ -19,7 +19,7 @@ exports.development = function() {
 // Production JS libs build
 exports.production = function() {
   return gulp.src(config.jsLibs.src)
-    .pipe(concat('libs.min.js'))
+    .pipe(concat(config.jsLibs.filename))
     .pipe(uglify())
     .pipe(gulp.dest(config.jsLibs.dest));
 }

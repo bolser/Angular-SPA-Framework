@@ -14,7 +14,7 @@ exports.development = function() {
   return gulp.src(config.css.src)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
-    .pipe(rename('app.min.css'))
+    .pipe(rename(config.css.filename))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(config.css.dest));
 }
@@ -27,6 +27,6 @@ exports.production = function() {
       browsers: ['> 0.5%']
     }))
     .pipe(cleanCSS())
-    .pipe(rename('app.min.css'))
+    .pipe(rename(config.css.filename))
     .pipe(gulp.dest(config.css.dest));
 }
