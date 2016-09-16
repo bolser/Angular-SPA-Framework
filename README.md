@@ -12,11 +12,11 @@ An Angular framework for building single page applications.
     gulp
 
 **Production**
-    
-   	export APP_ENV=production
+
+    export APP_ENV=production 
     bower install --production
     npm install --producion
- 	gulp production
+    gulp production
     
 ### Live reload server
     
