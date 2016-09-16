@@ -2,8 +2,7 @@
 
 // Modules
 var config = require('./config'),
-    del = require('del'),
-    gulp = require('gulp');
+    del = require('del');
 
 // Empty distribution directory
 module.exports = function() {

@@ -24,7 +24,7 @@ module.exports = function() {
     return runSequence('html', 'js');
   });
 
-  // Imagez
+  // Images
   watch(config.img.watch, function() {
     return runSequence('images');
   });
