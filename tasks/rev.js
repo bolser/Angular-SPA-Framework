@@ -27,14 +27,20 @@ gulp.task('rev-files', function() {
 
 // Rev references
 gulp.task('rev-references', function() {
-  var manifest = gulp.src(config.compile.temp + '/rev-manifest.json');
-
   return gulp.src('./index.html')
-    .pipe(revReplace({manifest: manifest}))
+    .pipe(revReplace({
+      manifest: gulp.src(config.compile.temp + '/rev-manifest.json')
+    }))
     .pipe(gulp.dest(config.compile.dest));
 });
 
-// Rev files
-module.exports = function() {
-  runSequence('rev-files', 'rev-references');
+// Production file revisioning
+exports.production = function() {
+  return runSequence('rev-files', 'rev-references');
+}
+
+// Development file revisioning
+exports.development = function() {
+  return gulp.src('./index.html')
+    .pipe(gulp.dest(config.compile.dest));
 }

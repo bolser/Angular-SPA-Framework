@@ -49,7 +49,8 @@ module.exports = {
       'tasks/**/*.*',
       '.tmp/**/*.*',
       'src/**/*.*',
-      'app/**/*.*'
+      'app/**/*.*',
+      'index.html'
     ]
   }
 };

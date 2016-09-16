@@ -18,9 +18,11 @@ module.exports = function() {
       ignored: config.server.ignoreFiles
     },
     server: {
-      baseDir: './',
+      baseDir: './dist',
        middleware: [
-        log({ format: '%date %status %method %url' }),
+        log({
+          format: '%date %status %method %url'
+        }),
         fallback({
           index: '/index.html',
           htmlAcceptHeaders: ['text/html', 'application/xhtml+xml']

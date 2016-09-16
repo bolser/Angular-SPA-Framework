@@ -11,6 +11,7 @@ gulp.task('default', function() {
     'clean',
     'html',
     ['css', 'js', 'js-libs', 'images'],
+    'rev',
     'watch'
   );
 });
@@ -41,6 +42,6 @@ function registerTasks(env) {
   gulp.task('images', require('./tasks/images')[env]);
   gulp.task('js', require('./tasks/js')[env]);
   gulp.task('js-libs', require('./tasks/js-libs')[env]);
-  gulp.task('rev', require('./tasks/rev'));
+  gulp.task('rev', require('./tasks/rev')[env]);
   gulp.task('watch', require('./tasks/watch'));
 }
