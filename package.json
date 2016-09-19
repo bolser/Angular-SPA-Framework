@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "name": "spa-framework",
+  "name": "angular-spa-framework",
   "author": "Rich Cooper",
   "license": "MIT",
   "private": true,
@@ -22,6 +22,7 @@
     "gulp-concat": "~2.6.0",
     "gulp-header": "1.8.2",
     "gulp-imagemin": "~3.0.3",
+    "gulp-import-css": "~0.1.2",
     "gulp-ng-annotate": "~2.0.0",
     "gulp-rename": "~1.2.2",
     "gulp-rev": "7.1.2",

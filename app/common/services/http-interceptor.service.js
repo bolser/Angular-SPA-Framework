@@ -38,5 +38,4 @@ function HttpInterceptorService($injector) {
         return state.go('error');
     }
   }
-
 }

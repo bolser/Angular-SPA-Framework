@@ -14,5 +14,4 @@ function ExampleController() {
   function example() {
     vm.result = 'answer';
   }
-
 }
