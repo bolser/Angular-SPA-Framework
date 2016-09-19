@@ -1,5 +1,4 @@
-## SPA-Framework
-
+## Angular SPA Framework
 
 An Angular framework for building single page applications.
 
