@@ -3,10 +3,10 @@
 angular
   .module('app.states', [
     'ui.router'
-  ]).run(stateChange);
+  ]).run(run);
 
 // Run on module load
-function stateChange($rootScope, $stateParams, $window) {
+function run($rootScope, $stateParams, $window) {
 
   // On state change success
   $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
