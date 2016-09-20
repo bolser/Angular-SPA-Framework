@@ -6,7 +6,7 @@ angular
   ]).run(run);
 
 // Run on module load
-function run($rootScope, $stateParams, $window) {
+function run($rootScope, $window) {
 
   // On state change success
   $rootScope.$on('$stateChangeSuccess', stateChangeSuccess);
