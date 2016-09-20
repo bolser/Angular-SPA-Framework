@@ -42,7 +42,7 @@ module.exports = {
   },
   server: {
     injectChanges: true,
-    watchFiles: ['./**/*.{html,css,js,png,jpg,svg,gif}'],
+    watchFiles: ['./**/*.{html,css,js,png,jpg,svg,gif,json}'],
     ignoreFiles: [
       'bower_components',
       'node_modules',

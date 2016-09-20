@@ -23,13 +23,15 @@ function HttpInterceptorService($injector) {
   function responseError(rejection) {
 
     // Handle bypass requests
-    if (angular.isDefined(rejection.config) && rejection.config.bypassInterceptor) {
+    if (angular.isDefined(rejection.config) &&
+        rejection.config.bypassInterceptor) {
       return rejection;
     }
 
     // Get $state via $injector to avoid a circular dependency
     var state = $injector.get('$state');
 
+    // Select state based on error status
     switch (rejection.status) {
       case 404:
         return state.go('404');

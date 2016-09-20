@@ -20,12 +20,23 @@ gulp.task('watch', require('./tasks/watch'));
 
 // Development build
 gulp.task('default', function() {
-  runSequence('clean', 'html', ['css', 'js', 'js-libs', 'images'], 'rev', 'watch');
+  runSequence(
+    'clean',
+    'html',
+    ['css', 'js', 'js-libs', 'images'],
+    'rev',
+    'watch'
+  );
 });
 
 // Production build
 gulp.task('production', function() {
-  runSequence('clean', 'html', ['css', 'js', 'js-libs', 'images'], 'rev');
+  runSequence(
+    'clean',
+    'html',
+    ['css', 'js', 'js-libs', 'images'],
+    'rev'
+  );
 });
 
 // Server
