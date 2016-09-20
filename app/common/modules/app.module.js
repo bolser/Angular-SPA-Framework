@@ -3,7 +3,6 @@
 angular
   .module('app', [
     'ngAnimate',
-    'ui.router',
     'updateMeta',
     'app.controllers',
     'app.directives',
