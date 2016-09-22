@@ -10,7 +10,7 @@ module.exports = function() {
   return gulp.src(config.html.src)
     .pipe(angularTemplateCache(config.html.filename, {
       module: config.html.module,
-      root: root
+      root: config.html.root
     }))
     .pipe(gulp.dest(config.compile.temp));
 }
