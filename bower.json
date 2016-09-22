@@ -4,7 +4,7 @@
   "author": "Rich Cooper",
   "license": "MIT",
   "private": true,
-  "description": "An AngularJS framework for building single page applications",
+  "description": "An Angular framework for building single page applications",
   "ignore": [
     ".gitignore",
     "bower.json",

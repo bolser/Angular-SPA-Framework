@@ -7,5 +7,6 @@ angular
     'app.controllers',
     'app.directives',
     'app.services',
-    'app.templates'
+    'app.templates',
+    'app.states'
   ]);

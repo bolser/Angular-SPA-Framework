@@ -8,9 +8,9 @@ var config = require('./config'),
 // HTML template build
 module.exports = function() {
   return gulp.src(config.html.src)
-    .pipe(angularTemplateCache('templates.js', {
-      module: 'app.templates',
-      root: '/app'
+    .pipe(angularTemplateCache(config.html.filename, {
+      module: config.html.module,
+      root: config.html.root
     }))
     .pipe(gulp.dest(config.compile.temp));
 }

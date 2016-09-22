@@ -16,6 +16,9 @@ module.exports = {
     src: './src/fonts/**/*.*'
   },
   html: {
+    filename: 'templates.js',
+    module: 'app.templates',
+    root: '/app',
     src: './app/**/*.html',
     watch: './app/**/*.html'
   },
@@ -46,10 +49,10 @@ module.exports = {
     ignoreFiles: [
       'bower_components',
       'node_modules',
-      'tasks/**/*.*',
       '.tmp/**/*.*',
-      'src/**/*.*',
       'app/**/*.*',
+      'src/**/*.*',
+      'tasks/**/*.*',
       'index.html'
     ]
   }
