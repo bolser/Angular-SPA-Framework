@@ -16,6 +16,7 @@ module.exports = {
     src: './src/fonts/**/*.*'
   },
   html: {
+    filename: 'templates.js',
     module: 'app.templates',
     root: '/app',
     src: './app/**/*.html',
