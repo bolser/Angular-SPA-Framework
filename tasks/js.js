@@ -12,7 +12,8 @@ var config = require('./config'),
 
 // Development JS build
 exports.development =  function() {
-  return gulp.src(config.js.src)
+  return gulp
+    .src(config.js.src)
     .pipe(webpack({
       devtool: 'source-map',
       output: {
@@ -37,7 +38,8 @@ exports.development =  function() {
 
 // Production JS build
 exports.production = function() {
-  return gulp.src(config.js.src)
+  return gulp
+    .src(config.js.src)
     .pipe(webpack({
       output: {
         filename: config.js.filename

@@ -13,7 +13,7 @@ module.exports = {
   },
   fonts: {
     dest: './dist/fonts',
-    src: './src/fonts/**/*.*'
+    src: './src/fonts/**'
   },
   html: {
     filename: 'templates.js',
@@ -24,8 +24,12 @@ module.exports = {
   },
   img: {
     dest: './dist/img',
-    src: './src/img/**/*.*',
-    watch: './src/img/**/*.*'
+    src: './src/img/**',
+    watch: './src/img/**'
+  },
+  index: {
+    src: './index.html',
+    watch: './index.html'
   },
   js: {
     dest: './dist/js',
@@ -43,16 +47,24 @@ module.exports = {
       './bower_components/angular-update-meta/dist/update-meta.js'
     ]
   },
+  rev: {
+    dontGlobal: [
+      'favicon.ico',
+    ],
+    dontRenameFile: [
+      '.html'
+    ]
+  },
   server: {
     injectChanges: true,
     watchFiles: ['./**/*.{html,css,js,png,jpg,svg,gif,json}'],
     ignoreFiles: [
       'bower_components',
       'node_modules',
-      '.tmp/**/*.*',
-      'app/**/*.*',
-      'src/**/*.*',
-      'tasks/**/*.*',
+      '.tmp/**',
+      'app/**',
+      'src/**',
+      'tasks/**',
       'index.html'
     ]
   }

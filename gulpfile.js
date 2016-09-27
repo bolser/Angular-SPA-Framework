@@ -13,9 +13,10 @@ gulp.task('css', require('./tasks/css')[env]);
 gulp.task('fonts', require('./tasks/fonts'));
 gulp.task('html', require('./tasks/html'));
 gulp.task('images', require('./tasks/images')[env]);
+gulp.task('index', require('./tasks/index'));
 gulp.task('js', require('./tasks/js')[env]);
 gulp.task('js-libs', require('./tasks/js-libs')[env]);
-gulp.task('rev', require('./tasks/rev')[env]);
+gulp.task('rev', require('./tasks/rev'));
 gulp.task('watch', require('./tasks/watch'));
 
 // Development build
@@ -23,8 +24,7 @@ gulp.task('default', function() {
   runSequence(
     'clean',
     'html',
-    ['css', 'js', 'js-libs', 'images'],
-    'rev',
+    ['index', 'css', 'js', 'js-libs', 'images', 'fonts'],
     'watch'
   );
 });
@@ -34,7 +34,7 @@ gulp.task('production', function() {
   runSequence(
     'clean',
     'html',
-    ['css', 'js', 'js-libs', 'images'],
+    ['index', 'css', 'js', 'js-libs', 'images', 'fonts'],
     'rev'
   );
 });

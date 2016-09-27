@@ -8,13 +8,15 @@ var config = require('./config'),
 
 // Development image build
 exports.development = function() {
-  return gulp.src(config.img.src)
+  return gulp
+    .src(config.img.src)
     .pipe(gulp.dest(config.img.dest));
 }
 
 // Production image build
 exports.production = function() {
-  return gulp.src(config.img.src)
+  return gulp
+    .src(config.img.src)
     .pipe(imagemin([
       imagemin.gifsicle(),
       imagemin.jpegtran(),

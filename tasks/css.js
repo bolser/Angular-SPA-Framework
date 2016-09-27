@@ -12,7 +12,8 @@ var autoprefixer = require('gulp-autoprefixer'),
 
 // Development CSS build
 exports.development = function() {
-  return gulp.src(config.css.src)
+  return gulp
+    .src(config.css.src)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(importCSS())
@@ -23,7 +24,8 @@ exports.development = function() {
 
 // Production CSS build
 exports.production = function() {
-  return gulp.src(config.css.src)
+  return gulp
+    .src(config.css.src)
     .pipe(sass())
     .pipe(autoprefixer({
       browsers: ['> 0.5%']

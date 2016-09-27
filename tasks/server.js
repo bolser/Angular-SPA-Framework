@@ -18,7 +18,7 @@ module.exports = function() {
       ignored: config.server.ignoreFiles
     },
     server: {
-      baseDir: './dist',
+      baseDir: config.compile.dest,
        middleware: [
         log({
           format: '%date %status %method %url'
