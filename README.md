@@ -12,7 +12,6 @@ An Angular framework for building single page applications.
 
 **Production**
 
-    export APP_ENV=production 
     bower install --production
     npm install --producion
     gulp production
