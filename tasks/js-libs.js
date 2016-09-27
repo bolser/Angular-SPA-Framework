@@ -9,7 +9,8 @@ var concat = require('gulp-concat'),
 
 // Development JS libs build
 exports.development = function() {
-  return gulp.src(config.jsLibs.src)
+  return gulp
+    .src(config.jsLibs.src)
     .pipe(sourcemaps.init())
     .pipe(concat(config.jsLibs.filename))
     .pipe(sourcemaps.write('./'))
@@ -18,7 +19,8 @@ exports.development = function() {
 
 // Production JS libs build
 exports.production = function() {
-  return gulp.src(config.jsLibs.src)
+  return gulp
+    .src(config.jsLibs.src)
     .pipe(concat(config.jsLibs.filename))
     .pipe(uglify())
     .pipe(gulp.dest(config.jsLibs.dest));

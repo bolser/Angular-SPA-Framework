@@ -2,9 +2,9 @@
 
 angular
   .module('app.states')
-  .config(states);
+  .config(config);
 
-function states($locationProvider, $stateProvider, $urlRouterProvider) {
+function config($locationProvider, $stateProvider, $urlRouterProvider) {
 
   // Enable html5 mode & hash prefix
   $locationProvider

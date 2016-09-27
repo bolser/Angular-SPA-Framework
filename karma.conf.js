@@ -16,26 +16,20 @@ module.exports = function(config) {
       './node_modules/angular-mocks/angular-mocks.js',
 
       // Services
-      './app/common/services/window-resize.service.spec.js',
-      './app/common/services/placeholder-support.service.spec.js',
+      './app/common/services/after-event.service.spec.js',
       './app/common/services/http-interceptor.service.spec.js',
+      './app/common/services/placeholder-support.service.spec.js',
 
       // Directives
       './app/common/directives/email-mask.directive.spec.js',
-      './app/common/directives/placeholder.directive.spec.js',
-
-      // Controllers
-      './app/home/home.controller.spec.js',
-
+      './app/common/directives/placeholder.directive.spec.js'
     ],
 
     // List of files to exclude
-    exclude: [
-    ],
+    exclude: [],
 
     // Preprocess matching files before serving to the browser
-    preprocessors: {
-    },
+    preprocessors: {},
 
     // Test results reporter: dots || progress
     reporters: ['mocha'],

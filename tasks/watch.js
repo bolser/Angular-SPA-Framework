@@ -30,7 +30,7 @@ module.exports = function() {
   });
 
   // Index
-  watch('./index.html', function() {
-    return runSequence('rev');
+  watch(config.index.watch, function() {
+    return runSequence('index');
   });
 }
