@@ -1,3 +1,5 @@
+'use strict';
+
 describe('placeholder directive', function() {
 
   // Bindable members
@@ -44,5 +46,4 @@ describe('placeholder directive', function() {
     }).toThrow();
     expect(element[0].value).toBe('');
   }));
-
 });

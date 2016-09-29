@@ -1,3 +1,5 @@
+'use strict';
+
 describe('AfterEventService', function() {
 
   // Bindable members
@@ -15,5 +17,4 @@ describe('AfterEventService', function() {
   it('Exists with required methods', function() {
     expect(angular.isFunction(AfterEventService)).toBe(true);
   });
-
 });

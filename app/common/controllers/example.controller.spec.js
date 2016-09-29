@@ -1,3 +1,5 @@
+'use strict';
+
 describe('ExampleController', function() {
 
   // Bindable members
@@ -16,5 +18,4 @@ describe('ExampleController', function() {
     ExampleController.example();
     expect(ExampleController.result).toBe('answer');
   });
-
 });

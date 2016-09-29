@@ -1,3 +1,5 @@
+'use strict';
+
 describe('PlaceholderSupportService', function() {
 
   // Bindable members
@@ -15,5 +17,4 @@ describe('PlaceholderSupportService', function() {
   it('Exists with required methods', function() {
     expect(angular.isFunction(PlaceholderSupportService)).toBe(true);
   });
-
 });
