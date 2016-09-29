@@ -12,10 +12,11 @@ module.exports = function() {
 
   // Browser sync config
   var options = {
-    injectChanges: config.server.injectChanges,
-    files: config.server.watchFiles,
+    injectChanges: true,
+    files: config.server.files,
+    online: false,
     watchOptions: {
-      ignored: config.server.ignoreFiles
+      cwd: config.compile.dest
     },
     server: {
       baseDir: config.compile.dest,

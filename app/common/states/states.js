@@ -15,8 +15,11 @@ function config($locationProvider, $stateProvider, $urlRouterProvider) {
     .hashPrefix('!');
 
   // Catch all redirect
-  $urlRouterProvider
-    .otherwise('/404');
+  $urlRouterProvider.otherwise(function($injector){
+    $injector.invoke(function($state) {
+      $state.go('404', {}, {location: false});
+    });
+  });
 
   // Define states
   $stateProvider

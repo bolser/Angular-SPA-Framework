@@ -4,10 +4,8 @@
 var gulp = require('gulp'),
     runSequence = require('run-sequence');
 
-// Environment
-var env = (process.env.APP_ENV ? process.env.APP_ENV : 'development');
-
-// Tasks
+// Register tasks
+envTasks('development');
 gulp.task('clean', require('./tasks/clean'));
 gulp.task('fonts', require('./tasks/fonts'));
 gulp.task('html', require('./tasks/html'));
@@ -16,8 +14,6 @@ gulp.task('rev', require('./tasks/rev'));
 gulp.task('watch', require('./tasks/watch'));
 
 // Environment tasks
-envTasks('development');
-
 function envTasks(env) {
   gulp.task('css', require('./tasks/css')[env]);
   gulp.task('images', require('./tasks/images')[env]);
