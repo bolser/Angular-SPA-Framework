@@ -1,3 +1,5 @@
+'user strict';
+
 describe('ngExample directive', function() {
 
   // Bindable members
@@ -16,5 +18,4 @@ describe('ngExample directive', function() {
   it('Renders the correct HTML', function() {
     expect(element[0].nodeName).toBe('DIV');
   });
-
 });

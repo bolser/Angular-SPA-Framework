@@ -7,25 +7,25 @@ module.exports = function(config) {
     // Frameworks to use
     frameworks: ['jasmine'],
 
-    // List of files/patterns to load in browser
+    // List of files & patterns to load in browser
     files: [
 
       // Libs
-      './dist/js/libs.min.js',
-      './dist/js/app.min.js',
-      './node_modules/angular-mocks/angular-mocks.js',
+      'dist/js/libs.min.js',
+      'dist/js/app.min.js',
+      'node_modules/angular-mocks/angular-mocks.js',
 
       // Services
-      './app/common/services/after-event.service.spec.js',
-      './app/common/services/http-interceptor.service.spec.js',
-      './app/common/services/placeholder-support.service.spec.js',
+      'app/common/services/after-event.service.spec.js',
+      'app/common/services/http-interceptor.service.spec.js',
+      'app/common/services/placeholder-support.service.spec.js',
 
       // Directives
-      './app/common/directives/email-mask.directive.spec.js',
-      './app/common/directives/placeholder.directive.spec.js'
+      'app/common/directives/email-mask.directive.spec.js',
+      'app/common/directives/placeholder.directive.spec.js'
     ],
 
-    // List of files to exclude
+    // Files to exclude
     exclude: [],
 
     // Preprocess matching files before serving to the browser
@@ -37,13 +37,13 @@ module.exports = function(config) {
     // Web server port
     port: 9876,
 
-    // Enable/disable colors in output (reporters & logs)
+    // Enable colors in reporters & logs output
     colors: true,
 
     // Logging level: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
-    // Enable/disable file watching & auto text execution
+    // Enable file watching & auto text execution
     autoWatch: true,
 
     // Start these browsers
@@ -59,6 +59,5 @@ module.exports = function(config) {
 
     // How many browsers to start simultaneously
     concurrency: Infinity
-
-  })
+  });
 }

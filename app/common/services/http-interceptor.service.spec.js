@@ -1,3 +1,5 @@
+'use strict';
+
 describe('HttpInterceptorService', function() {
 
   // Bindable members
@@ -36,5 +38,4 @@ describe('HttpInterceptorService', function() {
     expect($state.go).toHaveBeenCalledWith('error');
     expect(state500Promise).toBe(statePromiseMock);
   }));
-
 });

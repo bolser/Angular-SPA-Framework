@@ -1,3 +1,5 @@
+'use strict';
+
 describe('HomeController', function() {
 
   // Bindable members
@@ -15,5 +17,4 @@ describe('HomeController', function() {
   it('Should define vm', function() {
     expect(HomeController).toBeDefined();
   });
-
 });

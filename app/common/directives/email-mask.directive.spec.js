@@ -1,3 +1,5 @@
+'use strict';
+
 describe('ngEmailMask directive', function() {
 
   // Bindable members
@@ -18,5 +20,4 @@ describe('ngEmailMask directive', function() {
     expect(element.html()).toBe('test@gmail.com');
     expect(element[0].href).toBe('mailto:test@gmail.com');
   });
-
 });

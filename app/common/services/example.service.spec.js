@@ -1,3 +1,5 @@
+'use strict';
+
 describe('ExampleService', function() {
 
   // Bindable members
@@ -16,5 +18,4 @@ describe('ExampleService', function() {
     expect(ExampleService).toBeDefined();
     expect(angular.isFunction(ExampleService.example)).toBe(true);
   });
-
 });
