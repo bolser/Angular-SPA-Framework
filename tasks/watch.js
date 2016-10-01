@@ -11,22 +11,22 @@ module.exports = function() {
 
   // CSS
   watch(config.css.watch, function() {
-    return runSequence('css');
+    return runSequence('css-development');
   });
 
   // JS
   watch(config.js.watch, function() {
-    return runSequence('js');
+    return runSequence('js-development');
   });
 
   // HTML
   watch(config.html.watch, function() {
-    return runSequence('html', 'js');
+    return runSequence('html', 'js-development');
   });
 
   // Images
   watch(config.img.watch, function() {
-    return runSequence('images');
+    return runSequence('images-development');
   });
 
   // Index
